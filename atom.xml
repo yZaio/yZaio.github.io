@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2020-06-11T03:02:32.141Z</updated>
+  <updated>2020-06-12T09:10:48.823Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://yzaio.github.io/2020/06/11/hello-world/"/>
-    <id>https://yzaio.github.io/2020/06/11/hello-world/</id>
-    <published>2020-06-11T03:02:32.141Z</published>
-    <updated>2020-06-11T03:02:32.141Z</updated>
+    <title>基本数据类型与复杂数据类型</title>
+    <link href="https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/"/>
+    <id>https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/</id>
+    <published>2020-06-12T08:50:34.000Z</published>
+    <updated>2020-06-12T09:10:48.823Z</updated>
     
     <summary type="html">
     
@@ -29,13 +29,16 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一. 基本数据类型&quot;&gt;&lt;/a&gt;一. 基本数据类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;基本数据类型有&lt;br&gt;string number boolean nul
         
       
     
     </summary>
     
     
+    
+      <category term="javascript" scheme="https://yZaio.github.io/tags/javascript/"/>
     
   </entry>
   
