@@ -4,11 +4,132 @@
   
     
     <entry>
+      <title>前端日常知识点</title>
+      <link href="/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/"/>
+      <url>/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前端日常知识点"><a href="#前端日常知识点" class="headerlink" title="前端日常知识点"></a>前端日常知识点</h1><h2 id="1-CSS3的到来引入了一个非常有用的功能，就是calc-函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备-电脑，平板，手机-，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局"><a href="#1-CSS3的到来引入了一个非常有用的功能，就是calc-函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备-电脑，平板，手机-，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局" class="headerlink" title="1. CSS3的到来引入了一个非常有用的功能，就是calc()函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备(电脑，平板，手机)，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局"></a>1. CSS3的到来引入了一个非常有用的功能，就是<code>calc()</code>函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在<a href="https://www.webhek.com/misc/responsive-web-design" target="_blank" rel="noopener">自适应网页布局设计</a>中格外有用——针对不同尺寸的设备(电脑，平板，手机)，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局</h2><p>如以下写法</p><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height： calc(<span class="number">50</span>% - <span class="number">20</span>px)</span><br><span class="line">则高度为父盒子高度再减去<span class="number">20</span>px</span><br></pre></td></tr></tbody></table></figure><p>这个计算器有个注意点 ：  就是calc()内部算法中间运算符需使用空格分隔否则不会生效</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数组常用高阶语法</title>
+      <link href="/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/"/>
+      <url>/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数组常用高阶语法"><a href="#数组常用高阶语法" class="headerlink" title="数组常用高阶语法"></a>数组常用高阶语法</h1><h2 id="1-map方法"><a href="#1-map方法" class="headerlink" title="1. map方法"></a>1. map方法</h2><p>返回值为一个数组，可以对数组每一项进行处理并ruturn返回作为新数组的元素<br>可以传入三个参数</p><ul><li>第一个参数为当前元素的值</li><li>第二个参数为当前元素索引值</li><li>第三个参数为整个数组</li></ul><p>示例如下</p><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,arr</span>) =&gt;</span> {</span><br><span class="line">  <span class="keyword">return</span> arr + <span class="number">1</span></span><br><span class="line">})</span><br><span class="line">则arr就变为 [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></tbody></table></figure><h2 id="2-filter方法"><a href="#2-filter方法" class="headerlink" title="2. filter方法"></a>2. filter方法</h2><p>返回值为一个数组，可以对数组每一项进行检查判断，把检查完为true的元素ruturn返回作为新数组的元素<br>可以传入三个参数（与map一致）</p><ul><li>第一个参数为当前元素的值</li><li>第二个参数为当前元素索引值</li><li>第三个参数为整个数组</li></ul><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,arr</span>) =&gt;</span> {</span><br><span class="line">  <span class="keyword">return</span> arr &gt; <span class="number">1</span></span><br><span class="line">})</span><br><span class="line">则arr就变为 [<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></tbody></table></figure><h2 id="3-reduce方法"><a href="#3-reduce方法" class="headerlink" title="3. reduce方法"></a>3. reduce方法</h2><p>返回值为循环结束后return出来的累加值，可以作为一个累加器<br>可以传入两个参数</p><ul><li>第一个参数为回调函数<ul><li>回调函数的参数<ul><li>第一个参数： 上一次回调函数的结果（第一次没有上一次函数的回调函数的结果, 使用初始化值即是reduce方法的第二个参数）</li><li>第二个参数为当前元素的值</li><li>第三个参数为当前元素索引值</li><li>第四个参数为整个数组</li></ul></li></ul></li><li>第二个参数为初始值</li></ul><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> total = arr.reduce(<span class="function">(<span class="params">preValue,item,index,arr</span>) =&gt;</span> {</span><br><span class="line">  <span class="keyword">return</span> preValue + item</span><br><span class="line">},<span class="number">10</span>)</span><br><span class="line">则total最终结果为<span class="number">10</span> + <span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> = <span class="number">16</span></span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react学习</title>
+      <link href="/2021/04/07/react-xue-xi/"/>
+      <url>/2021/04/07/react-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="react学习"><a href="#react学习" class="headerlink" title="react学习"></a>react学习</h1><h2 id="1-jsx本质"><a href="#1-jsx本质" class="headerlink" title="1. jsx本质"></a>1. jsx本质</h2><ul><li>jsx -&gt; createElement函数 -&gt; ReactElement(对象树) -&gt; ReactDOM.    render -&gt; 真实DOM<br> jsx -&gt; createElement函数 -&gt; ReactElement(对象树) -&gt; ReactDOM.rensder -&gt; 原生的控件(UIButton/Button)</li></ul><h2 id="2-使用虚拟dom的好处"><a href="#2-使用虚拟dom的好处" class="headerlink" title="2.使用虚拟dom的好处"></a>2.使用虚拟dom的好处</h2><ul><li>jq和原生js等是直接操作真是Dom进行修改页面，而react是用一个jascript对象的虚拟Dom先来描述ui，再使用ReactDom.render来将虚拟dom转化成真实dom形成页面，这样可以避免了频繁操作真实dom树，提高性能，因为本来document.creatElement这个方法创建出来的Dom就是很复杂的东西，而ReactElemnt对象要比它简单很多。</li></ul><h2 id="3-React中设计原则-state中的数据的不可变性"><a href="#3-React中设计原则-state中的数据的不可变性" class="headerlink" title="3. React中设计原则: state中的数据的不可变性;"></a>3. React中设计原则: state中的数据的不可变性;</h2><ul><li>即是在修改state中的数据时，不要去修改到原来内部的数据项</li></ul><h2 id="4-逻辑与、逻辑或、空值合并运算符"><a href="#4-逻辑与、逻辑或、空值合并运算符" class="headerlink" title="4. 逻辑与、逻辑或、空值合并运算符"></a>4. 逻辑与、逻辑或、空值合并运算符</h2><ol><li><p>逻辑与</p><ul><li><p>let  a  =  sign &amp;&amp;  ‘执行了’</p><p>如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作为整个表达式的返回值给a，即sign为Nan,则a为Nan，sign为false，a为false</p></li></ul></li><li><p>逻辑或（一般用来做默认值）</p><ul><li><p>let a  =  sign ||  ‘执行了’</p><p>如果sign的Boolean值为true时，会把sign的值作为表达式的值返回给a，即sign为‘111’，则a为‘111’，</p><p>如果sign为false  则a为‘执行了’</p></li></ul></li><li><p>空值合并运算符</p><ul><li><p><strong>空值合并操作符</strong>（<strong><code>??</code></strong>）是一个逻辑操作符，当左侧的操作数为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank" rel="noopener"><code>null</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a> 时，返回其右侧操作数，否则返回左侧操作数。</p><p>与<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#logical_or_2" target="_blank" rel="noopener">逻辑或操作符（<code>||</code>）</a>不同，逻辑或操作符会在左侧操作数为<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank" rel="noopener">假值</a>时返回右侧操作数。也就是说，如果使用 <code>||</code> 来为某些变量设置默认值，可能会遇到意料之外的行为。比如为假值（例如，<code>''</code> 或 <code>0</code>）时。见下面的例子。</p><p>const foo = null ?? ‘default string’;<br>console.log(foo);<br>// expected output: “default string”</p><p>const baz = 0 ?? 42;<br>console.log(baz);<br>// expected output: 0  (输出为0，如果为逻辑或运算符，则为42)</p></li></ul></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue项目知识点</title>
+      <link href="/2021/03/31/vue-xiang-mu-zhi-shi-dian/"/>
+      <url>/2021/03/31/vue-xiang-mu-zhi-shi-dian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue项目知识点"><a href="#vue项目知识点" class="headerlink" title="vue项目知识点"></a>vue项目知识点</h1><h2 id="1-页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题"><a href="#1-页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题" class="headerlink" title="1. 页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题"></a>1. 页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题</h2><pre><code>window.addEventListener('hashchange', () =&gt; {let currentPath = window.location.hash.slice(1)if (this.$route.path !== currentPath) {this.$router.push(currentPath)}}, false)</code></pre><hr><h2 id="2-可以在index-html页面加上以下代码禁止页面缩放"><a href="#2-可以在index-html页面加上以下代码禁止页面缩放" class="headerlink" title="2. 可以在index.html页面加上以下代码禁止页面缩放"></a>2. 可以在index.html页面加上以下代码禁止页面缩放</h2><p> <code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</code></p><hr><h2 id="3-watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object-defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法："><a href="#3-watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object-defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法：" class="headerlink" title="3. watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object.defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法："></a>3. watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object.defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法：</h2><pre><code>let tempArr = [...this.targetArr]tempArr[0] = {data: 'test'}this.targetArr = tempArr</code></pre><hr><h2 id="4-批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去"><a href="#4-批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去" class="headerlink" title="4. 批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去"></a>4. 批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去</h2><p><code>'Content-Type': 'multipart/form-data; boundary = ' + new Date().getTime()</code> </p><hr><h2 id="5-移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main-js中引入，并使用它其中的attach方法fastclick-attach-document-body-来解决延迟。"><a href="#5-移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main-js中引入，并使用它其中的attach方法fastclick-attach-document-body-来解决延迟。" class="headerlink" title="5. 移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main.js中引入，并使用它其中的attach方法fastclick.attach(document.body)来解决延迟。"></a>5. 移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main.js中引入，并使用它其中的attach方法fastclick.attach(document.body)来解决延迟。</h2><hr><h2 id="6-Vue父子组件通过-sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this-emit-“update-value”-来修改父组件的值"><a href="#6-Vue父子组件通过-sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this-emit-“update-value”-来修改父组件的值" class="headerlink" title="6. Vue父子组件通过.sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this.$emit(“update:value”)来修改父组件的值"></a>6. Vue父子组件通过.sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this.$emit(“update:value”)来修改父组件的值</h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ie11踩坑点</title>
+      <link href="/2021/03/31/ie11-cai-keng-dian/"/>
+      <url>/2021/03/31/ie11-cai-keng-dian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ie11踩坑点"><a href="#ie11踩坑点" class="headerlink" title="ie11踩坑点"></a>ie11踩坑点</h1><h5 id="1-Ie11对于new-Date（）里面的值如果是用-分隔开的话会出现nan，需要使用正则表达式去替换成-来解决问题"><a href="#1-Ie11对于new-Date（）里面的值如果是用-分隔开的话会出现nan，需要使用正则表达式去替换成-来解决问题" class="headerlink" title="1. Ie11对于new Date（）里面的值如果是用/分隔开的话会出现nan，需要使用正则表达式去替换成-来解决问题"></a>1. Ie11对于new Date（）里面的值如果是用/分隔开的话会出现nan，需要使用正则表达式去替换成-来解决问题</h5><hr><h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><hr><h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><hr><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><hr><h5 id="5-ie11上不支持新的css3变量写法，使用变量写法处会出现不生效情况。"><a href="#5-ie11上不支持新的css3变量写法，使用变量写法处会出现不生效情况。" class="headerlink" title="5. ie11上不支持新的css3变量写法，使用变量写法处会出现不生效情况。"></a>5. ie11上不支持新的css3变量写法，使用变量写法处会出现不生效情况。</h5><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>webpack配置代理的注意点</title>
+      <link href="/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/"/>
+      <url>/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用webpack代理服务的注意点"><a href="#使用webpack代理服务的注意点" class="headerlink" title="使用webpack代理服务的注意点"></a>使用webpack代理服务的注意点</h1><p> 使用webpack配置代理访问解决跨域问题时，检索地址名如果与路由活跃 地址有相同时，会导致该路由页面刷新不存在，并且无法直接用该路由地址 访问页面，通过修改wenbpack配置内部的检索地址名或者改变路由活跃路 径解决问题。</p><h2 id="示例如下"><a href="#示例如下" class="headerlink" title="示例如下"></a>示例如下</h2><p><img src="https://upload-images.jianshu.io/upload_images/26132400-257844d461587f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"><br><strong><em>代理服务使用了test作为配置路径</em></strong><br>如果在路由内部使用了/test作为前端路由路径的话，使用push跳转不会出现错误，但是当刷新页面或者使用/test直接作为地址访问页面无法找到。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>element踩坑注意</title>
+      <link href="/2021/03/31/element-cai-keng-zhu-yi/"/>
+      <url>/2021/03/31/element-cai-keng-zhu-yi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="element踩坑点"><a href="#element踩坑点" class="headerlink" title="element踩坑点"></a>element踩坑点</h1><ol><li>使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。</li></ol><hr><ol start="2"><li>使用element组件校验规则要校验多选框的时候，不能在created周期内定义空数组，反正会出现校验bug，需要先给另外一个变量定义数组后赋值到该项上就可以</li></ol><hr><ol start="3"><li>Element组件库的cascader组件在ie11下，如果数据项字段太长会出现显示不全的状况，通过加入以下代码改变下拉框的宽度来解决问题<br><code>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .el-cascader__dropdown .el-cascader-menu { width: 320px !important; } }</code></li></ol><ul><li>其中320px为可改变值  根据自身项目数据的长度去进行调整</li></ul><hr><ol start="4"><li><p>项目使用elementui组件库的时候，因为设计可能采用的主题色不同，需要修改大部分element组件的默认色的话，可以使用scss来进行全局统一修改，通过安装主题修改器来生成并修改scss文件，修改element默认主题色，代码如下(<a href="https://element.eleme.cn/#/zh-CN/component/custom-theme" target="_blank" rel="noopener">更具体可参考element官网更换主题步骤</a>)：</p><ul><li>cd element-demo</li><li>npm i element-theme -g</li><li>npm i element-theme-chalk -D</li><li>et -i</li><li>修改scss中的颜色值</li><li>et   </li></ul></li></ol><hr><ol start="5"><li>element的select组件在ie11上打开还有关闭会闪现滚动条，通过在该vue文件最外层div定义样式超出省略overflow-x: hidden;overflow-y:visible!important;解决问题。</li></ol><hr><ol start="6"><li>标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp:2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>臭猪头，对不起，好好的</title>
       <link href="/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/"/>
       <url>/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/</url>
       
-        <content type="html"><![CDATA[<h2 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h2><ul><li>徐文莉</li></ul><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul><li>猪</li></ul><h2 id="picture"><a href="#picture" class="headerlink" title="picture"></a>picture</h2><p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2256160164,2873615387&amp;fm=26&amp;gp=0.jpg" alt="开心一点"></p><h2 id="对不起，让你受了这么多伤"><a href="#对不起，让你受了这么多伤" class="headerlink" title="对不起，让你受了这么多伤"></a>对不起，让你受了这么多伤</h2><p><img src="https://yzaio.gitee.io/medias/images/111.mp4" alt=""><br><img src="https://yzaio.gitee.io/medias/images/2.jpg" alt=""><br><img src="https://yzaio.gitee.io/medias/images/111.mkv" alt=""></p><video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/1.jpg">     <source id="mp4" src="https://yzaio.gitee.io/medias/images/111.mkv" type="video/mp4"></video>-555<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h2 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h2><ul><li>徐文莉</li></ul><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul><li>猪</li></ul><h2 id="picture"><a href="#picture" class="headerlink" title="picture"></a>picture</h2><p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2256160164,2873615387&amp;fm=26&amp;gp=0.jpg" alt="开心一点"></p><h2 id="对不起，让你受了这么多伤"><a href="#对不起，让你受了这么多伤" class="headerlink" title="对不起，让你受了这么多伤"></a>对不起，让你受了这么多伤</h2><p><img src="https://yzaio.gitee.io/medias/images/111.mp4" alt=""><br><img src="https://yzaio.gitee.io/medias/images/2.jpg" alt=""><br><img src="https://yzaio.gitee.io/medias/images/111.mkv" alt=""></p><video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/2.jpg">     <source id="mp4" src="https://yzaio.gitee.io/medias/images/111.mkv" type="video/mp4"></video>-555<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       

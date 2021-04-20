@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2020-06-24T08:36:26.853Z</updated>
+  <updated>2021-04-13T10:11:53.490Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -17,11 +17,182 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端日常知识点</title>
+    <link href="https://yzaio.github.io/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/"/>
+    <id>https://yzaio.github.io/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/</id>
+    <published>2021-04-13T06:40:44.000Z</published>
+    <updated>2021-04-13T10:11:53.490Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前端日常知识点&quot;&gt;&lt;a href=&quot;#前端日常知识点&quot; class=&quot;headerlink&quot; title=&quot;前端日常知识点&quot;&gt;&lt;/a&gt;前端日常知识点&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组常用高阶语法</title>
+    <link href="https://yzaio.github.io/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/"/>
+    <id>https://yzaio.github.io/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/</id>
+    <published>2021-04-09T08:09:34.000Z</published>
+    <updated>2021-04-09T08:46:52.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数组常用高阶语法&quot;&gt;&lt;a href=&quot;#数组常用高阶语法&quot; class=&quot;headerlink&quot; title=&quot;数组常用高阶语法&quot;&gt;&lt;/a&gt;数组常用高阶语法&lt;/h1&gt;&lt;h2 id=&quot;1-map方法&quot;&gt;&lt;a href=&quot;#1-map方法&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react学习</title>
+    <link href="https://yzaio.github.io/2021/04/07/react-xue-xi/"/>
+    <id>https://yzaio.github.io/2021/04/07/react-xue-xi/</id>
+    <published>2021-04-07T01:29:48.000Z</published>
+    <updated>2021-04-13T03:28:40.926Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;react学习&quot;&gt;&lt;a href=&quot;#react学习&quot; class=&quot;headerlink&quot; title=&quot;react学习&quot;&gt;&lt;/a&gt;react学习&lt;/h1&gt;&lt;h2 id=&quot;1-jsx本质&quot;&gt;&lt;a href=&quot;#1-jsx本质&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue项目知识点</title>
+    <link href="https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/"/>
+    <id>https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/</id>
+    <published>2021-03-31T02:30:23.000Z</published>
+    <updated>2021-03-31T06:16:16.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vue项目知识点&quot;&gt;&lt;a href=&quot;#vue项目知识点&quot; class=&quot;headerlink&quot; title=&quot;vue项目知识点&quot;&gt;&lt;/a&gt;vue项目知识点&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ie11踩坑点</title>
+    <link href="https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/"/>
+    <id>https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/</id>
+    <published>2021-03-31T02:27:48.000Z</published>
+    <updated>2021-03-31T06:16:18.690Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ie11踩坑点&quot;&gt;&lt;a href=&quot;#ie11踩坑点&quot; class=&quot;headerlink&quot; title=&quot;ie11踩坑点&quot;&gt;&lt;/a&gt;ie11踩坑点&lt;/h1&gt;&lt;h5
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>webpack配置代理的注意点</title>
+    <link href="https://yzaio.github.io/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/"/>
+    <id>https://yzaio.github.io/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/</id>
+    <published>2021-03-31T02:05:40.000Z</published>
+    <updated>2021-03-31T02:21:52.529Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用webpack代理服务的注意点&quot;&gt;&lt;a href=&quot;#使用webpack代理服务的注意点&quot; class=&quot;headerlink&quot; title=&quot;使用webpack代理服务的注意点&quot;&gt;&lt;/a&gt;使用webpack代理服务的注意点&lt;/h1&gt;&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="webpack" scheme="https://yZaio.github.io/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>element踩坑注意</title>
+    <link href="https://yzaio.github.io/2021/03/31/element-cai-keng-zhu-yi/"/>
+    <id>https://yzaio.github.io/2021/03/31/element-cai-keng-zhu-yi/</id>
+    <published>2021-03-31T01:33:14.000Z</published>
+    <updated>2021-03-31T06:18:45.018Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;element踩坑点&quot;&gt;&lt;a href=&quot;#element踩坑点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>臭猪头，对不起，好好的</title>
     <link href="https://yzaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/"/>
     <id>https://yzaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/</id>
     <published>2020-06-21T12:21:55.000Z</published>
-    <updated>2020-06-24T08:36:26.853Z</updated>
+    <updated>2020-06-24T09:12:43.851Z</updated>
     
     <summary type="html">
     

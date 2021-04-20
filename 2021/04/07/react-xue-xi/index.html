@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="臭猪头，对不起，好好的, yZaio">
+    <meta name="keywords" content="react学习, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>臭猪头，对不起，好好的 | yZaio</title>
+    <title>react学习 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">臭猪头，对不起，好好的</h1>
+                    <h1 class="description center-align post-title">react学习</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/love/">
-                                <span class="chip bg-color">love</span>
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
                             </a>
                         
                     </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-21
+                    2021-04-07
                 </div>
                 
 
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    72
+                    558
                 </div>
                 
 
@@ -472,18 +472,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h2><ul>
-<li>徐文莉</li>
+                <h1 id="react学习"><a href="#react学习" class="headerlink" title="react学习"></a>react学习</h1><h2 id="1-jsx本质"><a href="#1-jsx本质" class="headerlink" title="1. jsx本质"></a>1. jsx本质</h2><ul>
+<li>jsx -&gt; createElement函数 -&gt; ReactElement(对象树) -&gt; ReactDOM.    render -&gt; 真实DOM<br> jsx -&gt; createElement函数 -&gt; ReactElement(对象树) -&gt; ReactDOM.rensder -&gt; 原生的控件(UIButton/Button)</li>
 </ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
-<li>猪</li>
+<h2 id="2-使用虚拟dom的好处"><a href="#2-使用虚拟dom的好处" class="headerlink" title="2.使用虚拟dom的好处"></a>2.使用虚拟dom的好处</h2><ul>
+<li>jq和原生js等是直接操作真是Dom进行修改页面，而react是用一个jascript对象的虚拟Dom先来描述ui，再使用ReactDom.render来将虚拟dom转化成真实dom形成页面，这样可以避免了频繁操作真实dom树，提高性能，因为本来document.creatElement这个方法创建出来的Dom就是很复杂的东西，而ReactElemnt对象要比它简单很多。</li>
 </ul>
-<h2 id="picture"><a href="#picture" class="headerlink" title="picture"></a>picture</h2><p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2256160164,2873615387&amp;fm=26&amp;gp=0.jpg" alt="开心一点"></p>
-<h2 id="对不起，让你受了这么多伤"><a href="#对不起，让你受了这么多伤" class="headerlink" title="对不起，让你受了这么多伤"></a>对不起，让你受了这么多伤</h2><p><img src="https://yzaio.gitee.io/medias/images/111.mp4" alt=""><br><img src="https://yzaio.gitee.io/medias/images/2.jpg" alt=""><br><img src="https://yzaio.gitee.io/medias/images/111.mkv" alt=""></p>
-<video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/2.jpg">
-     <source id="mp4" src="https://yzaio.gitee.io/medias/images/111.mkv" type="video/mp4">
-</video>
--555<script>
+<h2 id="3-React中设计原则-state中的数据的不可变性"><a href="#3-React中设计原则-state中的数据的不可变性" class="headerlink" title="3. React中设计原则: state中的数据的不可变性;"></a>3. React中设计原则: state中的数据的不可变性;</h2><ul>
+<li>即是在修改state中的数据时，不要去修改到原来内部的数据项</li>
+</ul>
+<h2 id="4-逻辑与、逻辑或、空值合并运算符"><a href="#4-逻辑与、逻辑或、空值合并运算符" class="headerlink" title="4. 逻辑与、逻辑或、空值合并运算符"></a>4. 逻辑与、逻辑或、空值合并运算符</h2><ol>
+<li><p>逻辑与</p>
+<ul>
+<li><p>let  a  =  sign &amp;&amp;  ‘执行了’</p>
+<p>如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作为整个表达式的返回值给a，即sign为Nan,则a为Nan，sign为false，a为false</p>
+</li>
+</ul>
+</li>
+<li><p>逻辑或（一般用来做默认值）</p>
+<ul>
+<li><p>let a  =  sign ||  ‘执行了’</p>
+<p>如果sign的Boolean值为true时，会把sign的值作为表达式的值返回给a，即sign为‘111’，则a为‘111’，</p>
+<p>如果sign为false  则a为‘执行了’</p>
+</li>
+</ul>
+</li>
+<li><p>空值合并运算符</p>
+<ul>
+<li><p><strong>空值合并操作符</strong>（<strong><code>??</code></strong>）是一个逻辑操作符，当左侧的操作数为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank" rel="noopener"><code>null</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a> 时，返回其右侧操作数，否则返回左侧操作数。</p>
+<p>与<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#logical_or_2" target="_blank" rel="noopener">逻辑或操作符（<code>||</code>）</a>不同，逻辑或操作符会在左侧操作数为<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank" rel="noopener">假值</a>时返回右侧操作数。也就是说，如果使用 <code>||</code> 来为某些变量设置默认值，可能会遇到意料之外的行为。比如为假值（例如，<code>''</code> 或 <code>0</code>）时。见下面的例子。</p>
+<p>const foo = null ?? ‘default string’;<br>console.log(foo);<br>// expected output: “default string”</p>
+<p>const baz = 0 ?? 42;<br>console.log(baz);<br>// expected output: 0  (输出为0，如果为逻辑或运算符，则为42)</p>
+</li>
+</ul>
+</li>
+</ol>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -526,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/">https://yZaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/</a>
+                    <a href="https://yZaio.github.io/2021/04/07/react-xue-xi/">https://yZaio.github.io/2021/04/07/react-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -564,8 +588,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/love/">
-                                    <span class="chip bg-color">love</span>
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
                                 </a>
                             
                         </div>
@@ -737,29 +761,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/element-cai-keng-zhu-yi/">
+                <a href="/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="element踩坑注意">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="数组常用高阶语法">
                         
-                        <span class="card-title">element踩坑注意</span>
+                        <span class="card-title">数组常用高阶语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            element踩坑点
-使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。
+                            数组常用高阶语法1. map方法返回值为一个数组，可以对数组每一项进行处理并ruturn返回作为新数组的元素可以传入三个参数
 
+第一个参数为当前元素的值
+第二个参数为当前元素索引值
+第三个参数为整个数组
 
-
-使用element组件校验规则要校验多选框的时候，不能在cre
+示例如下
+12345let arr
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-09
                         </span>
                         <span class="publish-author">
                             
@@ -768,6 +794,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -779,31 +813,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2021/03/31/vue-xiang-mu-zhi-shi-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="vue项目知识点">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">vue项目知识点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
+                            vue项目知识点1. 页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题window.addEventListener('hashchange', () =&gt; {
 
-
-
-
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
                             </span>
                         <span class="publish-author">
                             
@@ -816,8 +844,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
                     </a>
                     
                 </div>
