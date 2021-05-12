@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="臭猪头，对不起，好好的, yZaio">
+    <meta name="keywords" content="vue中实现骨架屏, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>臭猪头，对不起，好好的 | yZaio</title>
+    <title>vue中实现骨架屏 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">臭猪头，对不起，好好的</h1>
+                    <h1 class="description center-align post-title">vue中实现骨架屏</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/love/">
-                                <span class="chip bg-color">love</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-21
+                    2021-05-11
                 </div>
                 
 
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    72
+                    2.1k
                 </div>
                 
 
@@ -472,18 +472,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Name"><a href="#Name" class="headerlink" title="Name"></a>Name</h2><ul>
-<li>徐文莉</li>
+                <h1 id="vue中实现"><a href="#vue中实现" class="headerlink" title="vue中实现"></a>vue中实现</h1><h1 id="vue中实现骨架屏"><a href="#vue中实现骨架屏" class="headerlink" title="vue中实现骨架屏"></a>vue中实现骨架屏</h1><h2 id="1-什么是骨架屏"><a href="#1-什么是骨架屏" class="headerlink" title="1. 什么是骨架屏"></a>1. 什么是骨架屏</h2><p>​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验</p>
+<h2 id="2-为什么需要骨架屏"><a href="#2-为什么需要骨架屏" class="headerlink" title="2.  为什么需要骨架屏"></a>2.  为什么需要骨架屏</h2><p>​    去饭店吃饭，需要排队了</p>
+<p>​    1. 白屏：</p>
+<p>​    饭店就只撂下一句话，我们在营业，吃饭要排队，用户等一会就不想等了</p>
+<p>​    2. loading:</p>
+<p>​    饭店给你取了个号，告诉你是在排队，可能很快就可以了，麻烦再等等吧</p>
+<p>​    3. 骨架屏：</p>
+<p>​    饭店说我是海底捞，我给你取了个号，而且给还了你零食、飞行棋、菜单让你玩着看着先，等也等得舒服一些</p>
+<p><img src="C:%5CUsers%5Csushengren%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210512094423014.png" alt="image-20210512094423014"></p>
+<h2 id="3-介绍骨架屏"><a href="#3-介绍骨架屏" class="headerlink" title="3. 介绍骨架屏"></a>3. 介绍骨架屏</h2><ul>
+<li><p>白屏时间：</p>
+<p>前、后端分离的架构越来越备受推行，这种架构带来的便利的同时，也带来了一些弊端，比如首屏渲染时间，因为首屏需要请求更多内容，比原来多了更多HTTP的往返时间，这造成了白屏，白屏时间过长，用户体验会大打折扣，如果用户网速差，则白屏时间会更长</p>
+</li>
+<li><p>可以怎么优化：</p>
+<p>白屏时间过长，我们可以做什么？</p>
+<p>1、加速(CDN)或减少HTTP请求损耗</p>
+<p>2、延迟加载</p>
+<p>3、减少请求内容的体积、字体库代替图片等</p>
+<p>4、优化用户等待的体验感 </p>
+</li>
 </ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
-<li>猪</li>
+<h2 id="4-骨架屏实现"><a href="#4-骨架屏实现" class="headerlink" title="4.   骨架屏实现"></a>4.   骨架屏实现</h2><p>有4种实现方式</p>
+<ul>
+<li><ol>
+<li><p>骨架图： </p>
+<p>一图解决，直接找设计做一张骨架屏的图片，前端控制显隐</p>
+<p>弊端：图片本身也属于一种加载资源，而且不灵活，每次修改骨架屏还得找设计</p>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><p>静态html、css</p>
+<p>完全通过 HTML 和 CSS 手写的，手写骨架屏当然可以完全复刻页面的真实样式</p>
+<p>弊端：改动了需求也需要手动维护</p>
+</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><p>自动遍历</p>
+<p>通过获取页面上的dom得到width、height、top、left等属性去描绘生成对应的骨架区块</p>
+<p>弊端：并非所有场景都适用</p>
+</li>
+</ol>
+</li>
+<li><ol start="4">
+<li><p>半自动化</p>
+<p>添加预备好的基础数据，渲染当前可视屏幕的骨架区块，相较于html、css维护要简单一些、也可以遍历数据之后存本地</p>
+<p>弊端：手动维护数据</p>
+</li>
+</ol>
+</li>
 </ul>
-<h2 id="picture"><a href="#picture" class="headerlink" title="picture"></a>picture</h2><p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2256160164,2873615387&amp;fm=26&amp;gp=0.jpg" alt="开心一点"></p>
-<h2 id="对不起，让你受了这么多伤"><a href="#对不起，让你受了这么多伤" class="headerlink" title="对不起，让你受了这么多伤"></a>对不起，让你受了这么多伤</h2><p><img src="https://yzaio.gitee.io/medias/images/111.mp4" alt=""><br><img src="https://yzaio.gitee.io/medias/images/2.jpg" alt=""><br><img src="https://yzaio.gitee.io/medias/images/111.mkv" alt=""></p>
-<video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/2.jpg">
-     <source id="mp4" src="https://yzaio.gitee.io/medias/images/111.mkv" type="video/mp4">
-</video>
--555<script>
+<h2 id="5-使用vue-server-renderer-插件在vue种实现骨架屏"><a href="#5-使用vue-server-renderer-插件在vue种实现骨架屏" class="headerlink" title="5.  使用vue-server-renderer 插件在vue种实现骨架屏"></a>5.  使用vue-server-renderer 插件在vue种实现骨架屏</h2><h3 id="使用vue-server-renderer可以将骨架屏代码抽离出来，使用一个-vue-文件来-coding，之后通过配置嵌入到index-html中，易于维护。"><a href="#使用vue-server-renderer可以将骨架屏代码抽离出来，使用一个-vue-文件来-coding，之后通过配置嵌入到index-html中，易于维护。" class="headerlink" title="使用vue-server-renderer可以将骨架屏代码抽离出来，使用一个 .vue 文件来 coding，之后通过配置嵌入到index.html中，易于维护。"></a>使用vue-server-renderer可以将骨架屏代码抽离出来，使用一个 .vue 文件来 coding，之后通过配置嵌入到index.html中，易于维护。</h3><p>​        <font color="lightGreen">实现步骤：</font></p>
+<ol>
+<li><p>在src下创建一个skeleton文件夹</p>
+<p>在文件夹下创建两个文件，skeleton.entry.js和skeleton.vue</p>
+<p><font color="lightBlue"><code>skeleton.entry.js</code> 是编译 <code>skeleton.vue</code> 的入口文件，类似于我们 Vue 项目中的 <code>main.js</code> 文件；</font></p>
+<p><font color="lightBlue"><code>skeleton.vue</code> 就是我们的骨架屏页面的代码,用于编写我们骨架屏页面的html及css，日后需要改动就在此文件进行改动</font></p>
+<ul>
+<li><p>skeleton.entry.js文件代码：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import Vue from 'vue'</span><br><span class="line">import Skeleton from './skeleton.vue'</span><br><span class="line"></span><br><span class="line">export default new Vue({</span><br><span class="line">  // 根实例简单的渲染应用程序组件</span><br><span class="line">  render: h =&gt; h(Skeleton)</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>skeleton.vue文件代码：（骨架屏页面的代码，根据项目需求进行调整，这里只是示例）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class="skeleton"&gt;</span><br><span class="line">    &lt;div class="head"&gt;</span><br><span class="line">      &lt;div class="round"&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;div class="line"&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class="line"&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class="skeletoContain"&gt;</span><br><span class="line">      &lt;div class="mySkeleton" v-for="item in 5" :key="item"&gt;</span><br><span class="line">        孙洲洋的骨架屏</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">  .skeleton {</span><br><span class="line">    padding: 20vw 5vw 5vw;</span><br><span class="line">  }</span><br><span class="line">  .head {</span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">  }</span><br><span class="line">  .line {</span><br><span class="line">    width: 50vw;</span><br><span class="line">    height: 3vw;</span><br><span class="line">    background-color: #eeeeee;</span><br><span class="line">    margin-left: 3vw;</span><br><span class="line">  }</span><br><span class="line">  .head .line:nth-child(1) {</span><br><span class="line">    width: 30vw;</span><br><span class="line">    margin-bottom: 5vw;</span><br><span class="line">  }</span><br><span class="line">  .round {</span><br><span class="line">    width: 20vw;</span><br><span class="line">    height: 20vw;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    background-color: #eeeeee;</span><br><span class="line">  }</span><br><span class="line">  .skeletoContain {</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    align-items: center;</span><br><span class="line">    margin-top: 10vw;</span><br><span class="line">  }</span><br><span class="line">  .mySkeleton {</span><br><span class="line">    width: 25vw;</span><br><span class="line">    height: 25vw;</span><br><span class="line">    color: lightblue;</span><br><span class="line">    background-color: #eee;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">  }</span><br><span class="line">  .skeleton .mySkeleton:nth-child(n+4):nth-child(-n+5) {</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    margin-top: 10vw;</span><br><span class="line">  }</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>在项目根目录下创建一个webpack.skeleton.conf.js文件，这是一个 webpack 的配置文件，配合使用 <code>vue-server-renderer</code> 将我们的 <code>skeleton.vue</code> 文件内容构建为单个的 json 格式的文件（这是 Vue SSR 渲染的策略）</p>
+<ul>
+<li><p>文件代码：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// webpack.skeleton.conf.js</span><br><span class="line">'use strict'</span><br><span class="line">const path = require('path')</span><br><span class="line">const nodeExternals = require('webpack-node-externals')</span><br><span class="line">const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')</span><br><span class="line">const VueLoader = require('vue-loader/lib/plugin')</span><br><span class="line"></span><br><span class="line">module.exports = {</span><br><span class="line">  target: 'node',</span><br><span class="line">  devtool: '#source-map',</span><br><span class="line">  entry: './src/skeleton/skeleton.entry.js',</span><br><span class="line">  output: {</span><br><span class="line">    path: path.resolve(__dirname, './dist'),</span><br><span class="line">    publicPath: '/dist/',</span><br><span class="line">    filename: '[name].js',</span><br><span class="line">    libraryTarget: 'commonjs2'</span><br><span class="line">  },</span><br><span class="line">  module: {</span><br><span class="line">    noParse: /es6-promise\.js$/,  // avoid webpack shimming process</span><br><span class="line">    rules: [</span><br><span class="line">      {</span><br><span class="line">        test: /\.vue$/,</span><br><span class="line">        loader: 'vue-loader',</span><br><span class="line">        options: {</span><br><span class="line">          compilerOptions: {</span><br><span class="line">            preserveWhitespace: false</span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      },</span><br><span class="line">      {</span><br><span class="line">        test: /\.css$/,</span><br><span class="line">        use: ['vue-style-loader', 'css-loader']</span><br><span class="line">      }</span><br><span class="line">    ]</span><br><span class="line">  },</span><br><span class="line">  performance: {</span><br><span class="line">    hints: false</span><br><span class="line">  },</span><br><span class="line">  externals: nodeExternals({</span><br><span class="line">    // do not externalize CSS files in case we need to import it from a dep</span><br><span class="line">    allowlist: /\.css$/</span><br><span class="line">  }),</span><br><span class="line">  plugins: [</span><br><span class="line">    // 这是将服务器的整个输出构建为单个 JSON 文件的插件。</span><br><span class="line">    // 默认文件名为 `vue-ssr-server-bundle.json`</span><br><span class="line">    new VueSSRServerPlugin({</span><br><span class="line">      filename: 'skeleton.json'</span><br><span class="line">    }),</span><br><span class="line">    new VueLoader()</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><font size="3" color="lightGreen">此处注意一点：webpack无法打包.vue文件，需要安装相关的loader，即vue-loader，<strong>这个插件是必须的！</strong> 它的职责是将你定义过的其它规则复制并应用到 <code>.vue</code> 文件里相应语言的块。例如，如果你有一条匹配 <code>/\.js$/</code> 的规则，那么它会应用到 <code>.vue</code> 文件里的 <code>&lt;script&gt;</code> 块。 并且在<font color="red">plugins中需要把插件引入</font></font></p>
+</li>
+</ul>
+<ol start="3">
+<li><p>需要安装相关依赖</p>
+<p>执行以下命令：</p>
+<ul>
+<li>npm i <a href="mailto:webpack-cli@3.3.10">webpack-cli@3.3.10</a> -D</li>
+<li>npm i webpack-node-externals</li>
+<li>npm i vue-server-renderer</li>
+<li>npm i vue-loader vue-template-compiler -D</li>
+</ul>
+</li>
+<li><p>在package.json中加入命令</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"skeleton": "webpack --progress --config build/webpack.skeleton.conf.js"</span><br><span class="line">//此命令用于使用webpack-cli 运行这个 webpack.skeleton.conf.js 配置文件</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>执行npm run skeleton就会在根目录下创建出一个dist文件夹，其中有一个skeleton.json文件</p>
+</li>
+<li><p>在根目录下创建一个skeleton.js，此文件作用用于将skeleton.json文件的内容插入index.html中</p>
+<p>skeleton.js文件代码：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">// skeleton.js</span><br><span class="line">const fs = require('fs')</span><br><span class="line">const { resolve } = require('path')</span><br><span class="line">const { createBundleRenderer } = require('vue-server-renderer')</span><br><span class="line"></span><br><span class="line">function createRenderer(bundle, options) {</span><br><span class="line">  return createBundleRenderer(bundle, Object.assign(options, {</span><br><span class="line">    // recommended for performance</span><br><span class="line">    // runInNewContext: false</span><br><span class="line">  }))</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">const handleError = err =&gt; {</span><br><span class="line">  console.error(`error during render : ${req.url}`)</span><br><span class="line">  console.error(err.stack)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">const bundle = require('./dist/skeleton.json')</span><br><span class="line">const templatePath = resolve('./public/index.html')</span><br><span class="line">const template = fs.readFileSync(templatePath, 'utf-8')</span><br><span class="line">const renderer = createRenderer(bundle, {</span><br><span class="line">  template</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">// console.log(renderer)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 说明：</span><br><span class="line"> * 默认的index.html中包含&lt;%= BASE_URL %&gt;的插值语法</span><br><span class="line"> * 我们不在生成骨架屏这一步改变模板中的这个插值</span><br><span class="line"> * 因为这个插值会在项目构建时完成</span><br><span class="line"> * 但是如果模板中有这个插值语法，而我们在vue-server-renderder中使用这个模板，而不传值的话，是会报错的</span><br><span class="line"> * 所以，我们去掉模板中的插值，而使用这个传参的方式，再将这两个插值原模原样返回到模板中</span><br><span class="line"> *</span><br><span class="line"> * 文档： https://cli.vuejs.org/zh/guide/html-and-static-assets.html#%E6%8F%92%E5%80%BC</span><br><span class="line"> */</span><br><span class="line">const context = {</span><br><span class="line">  title: '',  // default title</span><br><span class="line">  meta: `&lt;meta name="theme-color" content="#4285f4"&gt;</span><br><span class="line">    &lt;link rel="icon" href="&lt;%= BASE_URL %&gt;favicon.ico"&gt;</span><br><span class="line">    &lt;link rel="stylesheet" href="&lt;%= BASE_URL %&gt;css/reset.css"&gt;`</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">renderer.renderToString(context, (err, html) =&gt; {</span><br><span class="line">  if(err) {</span><br><span class="line">    return handleError(err)</span><br><span class="line">  }</span><br><span class="line">  fs.writeFileSync(resolve(__dirname, './public/index.html'), html, 'utf-8')</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="7">
+<li><p>在index.html中修改代码增加占位符（index.html 中的 div#app 中要加一个注解插槽，<code>&lt;!--vue-ssr-outlet--&gt;</code> 这个是必须的，Vue SSR 文档中有说这个。这个注解是必须的，请注意！）（<font color="lightGreen">需要注意的是需要把index.html文件中包含的&lt;%= &gt;语法的语句去掉，在上面的skeleton.js中补充进去后面后自动生成到index.html中</font>）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset="utf-8"&gt;</span><br><span class="line">  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</span><br><span class="line">  &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;</span><br><span class="line">  &lt;link rel="icon" href="&lt;%= BASE_URL %&gt;favicon.ico"&gt; //需要去除</span><br><span class="line">  &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt; //需要去除</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id="app"&gt;</span><br><span class="line">  &lt;!--vue-ssr-outlet--&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- built files will be auto injected --&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>输入命令node skeleton.js，即会把原先public中的index.html替换掉，运行项目，在network中采用slow 3g模式下可以就可以清楚看到骨架屏效果。</p>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/26132400-82bd1868458a981d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>后续如果需要修改骨架屏，只需要修改skeleton.vue文件的代码，然后把index.html赋值为第7步中的原始状态，执行npm run skeleton还有node  skeleton.js命令即可</p>
+<h4 id="到此我们vue中实现骨架屏就告一段落了"><a href="#到此我们vue中实现骨架屏就告一段落了" class="headerlink" title="到此我们vue中实现骨架屏就告一段落了"></a>到此我们vue中实现骨架屏就告一段落了</h4><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -526,7 +627,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/">https://yZaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/</a>
+                    <a href="https://yZaio.github.io/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">https://yZaio.github.io/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -564,8 +665,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/love/">
-                                    <span class="chip bg-color">love</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -733,34 +834,33 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/31/element-cai-keng-zhu-yi/">
+                <a href="/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="element踩坑注意">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
                         
-                        <span class="card-title">element踩坑注意</span>
+                        <span class="card-title">vue中实现骨架屏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            element踩坑点
-使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。
-
-
-
-使用element组件校验规则要校验多选框的时候，不能在cre
+                            vue中实现vue中实现骨架屏1. 什么是骨架屏​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验
+2.  为什么需要骨架屏​    去饭店吃饭，需要排队了
+​    1. 白屏：
+​ 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -768,6 +868,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -779,31 +888,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="逻辑与、逻辑或、空值合并运算符">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">逻辑与、逻辑或、空值合并运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
-
-
-
-
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
+                            逻辑与、逻辑或、空值合并运算符1. 逻辑与
+let  a  =  sign &amp;&amp;  ‘执行了’
+如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                             </span>
                         <span class="publish-author">
                             
@@ -816,8 +920,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>

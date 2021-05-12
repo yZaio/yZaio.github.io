@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2021-04-13T10:11:53.490Z</updated>
+  <updated>2021-05-12T15:13:51.374Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -17,11 +17,111 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue中实现骨架屏</title>
+    <link href="https://yzaio.github.io/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/"/>
+    <id>https://yzaio.github.io/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/</id>
+    <published>2021-05-11T06:46:41.000Z</published>
+    <updated>2021-05-12T15:13:51.374Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vue中实现&quot;&gt;&lt;a href=&quot;#vue中实现&quot; class=&quot;headerlink&quot; title=&quot;vue中实现&quot;&gt;&lt;/a&gt;vue中实现&lt;/h1&gt;&lt;h1 id=&quot;vue中实现骨架屏&quot;&gt;&lt;a href=&quot;#vue中实现骨架屏&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="https://yZaio.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>逻辑与、逻辑或、空值合并运算符</title>
+    <link href="https://yzaio.github.io/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/"/>
+    <id>https://yzaio.github.io/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/</id>
+    <published>2021-05-10T07:57:29.000Z</published>
+    <updated>2021-05-12T07:43:50.757Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;逻辑与、逻辑或、空值合并运算符&quot;&gt;&lt;a href=&quot;#逻辑与、逻辑或、空值合并运算符&quot; class=&quot;headerlink&quot; title=&quot;逻辑与、逻辑或、空值合并运算符&quot;&gt;&lt;/a&gt;逻辑与、逻辑或、空值合并运算符&lt;/h1&gt;&lt;h2 id=&quot;1-逻辑与&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Web" scheme="https://yZaio.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jsx的实质</title>
+    <link href="https://yzaio.github.io/2021/05/10/jsx-de-shi-zhi/"/>
+    <id>https://yzaio.github.io/2021/05/10/jsx-de-shi-zhi/</id>
+    <published>2021-05-10T05:49:32.000Z</published>
+    <updated>2021-05-12T15:22:05.436Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;jsx的实质&quot;&gt;&lt;a href=&quot;#jsx的实质&quot; class=&quot;headerlink&quot; title=&quot;jsx的实质&quot;&gt;&lt;/a&gt;jsx的实质&lt;/h1&gt;&lt;h2 id=&quot;1-jsx的作用&quot;&gt;&lt;a href=&quot;#1-jsx的作用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react中diff算法和列表key值的作用及与vue中diff算法的区别</title>
+    <link href="https://yzaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/"/>
+    <id>https://yzaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/</id>
+    <published>2021-05-10T02:28:49.000Z</published>
+    <updated>2021-05-10T03:27:48.620Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;react中diff算法和列表key值的作用及与vue中diff算法的区别&quot;&gt;&lt;a href=&quot;#react中diff算法和列表key值的作用及与vue中diff算法的区别&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端日常知识点</title>
     <link href="https://yzaio.github.io/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/"/>
     <id>https://yzaio.github.io/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/</id>
     <published>2021-04-13T06:40:44.000Z</published>
-    <updated>2021-04-13T10:11:53.490Z</updated>
+    <updated>2021-05-12T15:12:04.021Z</updated>
     
     <summary type="html">
     
@@ -37,7 +137,7 @@
     
     
     
-      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+      <category term="Web" scheme="https://yZaio.github.io/tags/Web/"/>
     
   </entry>
   
@@ -46,7 +146,7 @@
     <link href="https://yzaio.github.io/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/"/>
     <id>https://yzaio.github.io/2021/04/09/shu-zu-chang-yong-gao-jie-yu-fa/</id>
     <published>2021-04-09T08:09:34.000Z</published>
-    <updated>2021-04-09T08:46:52.912Z</updated>
+    <updated>2021-05-12T07:44:27.570Z</updated>
     
     <summary type="html">
     
@@ -62,7 +162,7 @@
     
     
     
-      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+      <category term="Web" scheme="https://yZaio.github.io/tags/Web/"/>
     
   </entry>
   
@@ -71,7 +171,7 @@
     <link href="https://yzaio.github.io/2021/04/07/react-xue-xi/"/>
     <id>https://yzaio.github.io/2021/04/07/react-xue-xi/</id>
     <published>2021-04-07T01:29:48.000Z</published>
-    <updated>2021-04-13T03:28:40.926Z</updated>
+    <updated>2021-05-12T15:20:31.716Z</updated>
     
     <summary type="html">
     
@@ -96,7 +196,7 @@
     <link href="https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/"/>
     <id>https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/</id>
     <published>2021-03-31T02:30:23.000Z</published>
-    <updated>2021-03-31T06:16:16.012Z</updated>
+    <updated>2021-05-12T15:22:13.476Z</updated>
     
     <summary type="html">
     
@@ -112,7 +212,7 @@
     
     
     
-      <category term="web" scheme="https://yZaio.github.io/tags/web/"/>
+      <category term="vue" scheme="https://yZaio.github.io/tags/vue/"/>
     
   </entry>
   
@@ -121,7 +221,7 @@
     <link href="https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/"/>
     <id>https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/</id>
     <published>2021-03-31T02:27:48.000Z</published>
-    <updated>2021-03-31T06:16:18.690Z</updated>
+    <updated>2021-05-12T15:11:12.753Z</updated>
     
     <summary type="html">
     
@@ -169,7 +269,7 @@
     <link href="https://yzaio.github.io/2021/03/31/element-cai-keng-zhu-yi/"/>
     <id>https://yzaio.github.io/2021/03/31/element-cai-keng-zhu-yi/</id>
     <published>2021-03-31T01:33:14.000Z</published>
-    <updated>2021-03-31T06:18:45.018Z</updated>
+    <updated>2021-05-12T15:11:31.598Z</updated>
     
     <summary type="html">
     
@@ -184,34 +284,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>臭猪头，对不起，好好的</title>
-    <link href="https://yzaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/"/>
-    <id>https://yzaio.github.io/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/</id>
-    <published>2020-06-21T12:21:55.000Z</published>
-    <updated>2020-06-24T09:12:43.851Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Name&quot;&gt;&lt;a href=&quot;#Name&quot; class=&quot;headerlink&quot; title=&quot;Name&quot;&gt;&lt;/a&gt;Name&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;徐文莉&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="love" scheme="https://yZaio.github.io/tags/love/"/>
     
   </entry>
   

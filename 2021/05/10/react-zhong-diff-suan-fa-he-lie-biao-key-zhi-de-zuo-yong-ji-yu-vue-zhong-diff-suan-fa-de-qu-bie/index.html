@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="element踩坑注意, yZaio">
+    <meta name="keywords" content="react中diff算法和列表key值的作用及与vue中diff算法的区别, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>element踩坑注意 | yZaio</title>
+    <title>react中diff算法和列表key值的作用及与vue中diff算法的区别 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">element踩坑注意</h1>
+                    <h1 class="description center-align post-title">react中diff算法和列表key值的作用及与vue中diff算法的区别</h1>
                 </div>
             </div>
         </div>
@@ -433,9 +433,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-05-10
                 </div>
                 
 
@@ -456,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    438
+                    1.4k
                 </div>
                 
 
@@ -468,38 +472,95 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="element踩坑点"><a href="#element踩坑点" class="headerlink" title="element踩坑点"></a>element踩坑点</h1><ol>
-<li>使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。</li>
-</ol>
+                <h1 id="react中diff算法和列表key值的作用及与vue中diff算法的区别"><a href="#react中diff算法和列表key值的作用及与vue中diff算法的区别" class="headerlink" title="react中diff算法和列表key值的作用及与vue中diff算法的区别"></a>react中diff算法和列表key值的作用及与vue中diff算法的区别</h1><h2 id="1-react中diff算法及列表key属性的作用"><a href="#1-react中diff算法及列表key属性的作用" class="headerlink" title="1.react中diff算法及列表key属性的作用"></a>1.react中diff算法及列表key属性的作用</h2><p>React在props或state发生改变时，会调用React的render方法，会创建一颗不同的树。</p>
+<p>React需要基于这两颗不同的树之间的差别来判断如何有效的更新UI： </p>
+<p>如果一棵树参考另外一棵树进行完全比较更新，那么即使是最先进的算法，该算法的复杂程度为 O(n 3 )，其中 n 是树中元素</p>
+<p>的数量； </p>
+<p> <a href="https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf；" target="_blank" rel="noopener">https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf；</a> </p>
+<p>如果在 React 中使用了该算法，那么展示 1000 个元素所需要执行的计算量将在十亿的量级范围； </p>
+<p>这个开销太过昂贵了，React的更新性能会变得非常低效； </p>
+<p>于是，React对这个diff算法进行了优化，将其优化成了O(n)，如何优化的呢？</p>
+<p>同层节点之间相互比较，不会垮节点比较； </p>
+<p>不同类型的节点，产生不同的树结构；</p>
+<p>开发中，可以通过key来指定哪些节点在不同的渲染下保持稳定；</p>
 <hr>
-<ol start="2">
-<li>使用element组件校验规则要校验多选框的时候，不能在created周期内定义空数组，反正会出现校验bug，需要先给另外一个变量定义数组后赋值到该项上就可以</li>
-</ol>
+<p><font face="逐浪立楷" color="green" size="3">下面通过三步讲下react的diff算法更新虚拟dom和真实dom机制</font></p>
+<h3 id="情况一：对比不同类型的元素"><a href="#情况一：对比不同类型的元素" class="headerlink" title="情况一：对比不同类型的元素"></a><strong>情况一：对比不同类型的元素</strong></h3><ul>
+<li><p>当节点为不同的元素，React会拆卸原有的树，并且建立起新的树：</p>
+<p> 当一个元素从 <a> 变成 <img>，从 </a></p><article><a> 变成 <comment>，或从 <button> 变成 <div> 都会触发一个完整的重建 <p></p>
+<p>流程；</p>
+<p>当卸载一棵树时，对应的DOM节点也会被销毁，组件实例将执行 componentWillUnmount() 方法； </p>
+<p>当建立一棵新的树时，对应的 DOM 节点会被创建以及插入到 DOM 中，组件实例将执行 componentWillMount() 方法， </p>
+<p>紧接着 componentDidMount() 方法； </p>
+</div></button></comment></a></article></li><a>
+</a></ul><a>
+<p>  比如下面的代码更改： </p>
+<p>  React 会销毁<font color="blue">Top</font> 组件并且重新装载一个新的组件，而不会对<font color="blue">Top</font> 进行复用；</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-f0f034844376d533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="'节点类型不同'"></p>
 <hr>
-<ol start="3">
-<li>Element组件库的cascader组件在ie11下，如果数据项字段太长会出现显示不全的状况，通过加入以下代码改变下拉框的宽度来解决问题<br><code>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .el-cascader__dropdown .el-cascader-menu { width: 320px !important; } }</code></li>
-</ol>
+<p><strong>情况二：对比同一类型的元素</strong></p>
 <ul>
-<li>其中320px为可改变值  根据自身项目数据的长度去进行调整</li>
+<li>当比对两个相同类型的 React 元素时，React 会保留 DOM 节点，仅比对及更新有改变的属性。</li>
 </ul>
+<p>  比如下面的代码更改： </p>
+<p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 className 属性；</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-c837f28831d16df9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>  比如下面的代码更改： </p>
+<p>  当更新 style 属性时，React 仅更新有所更变的属性。</p>
+<p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 color 样式，无需修改 fontWeight。 </p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-97d8b62302aa2420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>  如果是同类型的组件元素： </p>
+<p>  组件会保持不变，React会更新该组件的props，并且调用componentWillReceiveProps() 和 componentWillUpdate() 方 </p>
+<p>  法； </p>
+<p>  下一步，调用 render() 方法，diff 算法将在之前的结果以及新的结果中进行递归；</p>
 <hr>
-<ol start="4">
-<li><p>项目使用elementui组件库的时候，因为设计可能采用的主题色不同，需要修改大部分element组件的默认色的话，可以使用scss来进行全局统一修改，通过安装主题修改器来生成并修改scss文件，修改element默认主题色，代码如下(<a href="https://element.eleme.cn/#/zh-CN/component/custom-theme" target="_blank" rel="noopener">更具体可参考element官网更换主题步骤</a>)：</p>
+<p><strong>情况三：对子节点进行递归</strong></p>
+<p>在默认条件下，当递归 DOM 节点的子元素时，React 会同</p>
+<p>时遍历两个子元素的列表；当产生差异时，生成一个</p>
+<p>mutation。 </p>
+<p>我们来看一下在最后插入一条数据的情况： </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/26132400-98c9dfdac4e29322.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>前面两个比较是完全相同的，所以不会产生mutation； </p>
+<p>最后一个比较，产生一个mutation，将其插入到新的</p>
+<p>DOM树中即可；</p>
+<p>但是如果我们是在中间插入一条数据：</p>
+<p><img src="C:%5CUsers%5Csushengren%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210510111212036.png" alt="image-20210510111212036"></p>
+<p>这样react中新树的第一项与旧树的第一项进行比较，不对应，产生一个mutation，以此类推，</p>
+<p>React会对每一个子元素产生一个mutation，则是三个mutation而不是保持 </p><li>first</li>和<li>second</li>的不变；<p></p>
+<p>这种低效的比较方式会带来一定的性能问题；</p>
+<p><font color="pink">所以为了解决这种低效的性能问题，可以加入keys的优化</font></p>
+<p>我们在react中遍历列表时，在字元素不加key属性的话总是会提示一个警告，让我们加入一个key属性：</p>
 <ul>
-<li>cd element-demo</li>
-<li>npm i element-theme -g</li>
-<li>npm i element-theme-chalk -D</li>
-<li>et -i</li>
-<li>修改scss中的颜色值</li>
-<li>et   </li>
+<li>方式一：在最后位置插入数据</li>
+</ul>
+<p>这种情况，有无key意义并不大</p>
+<ul>
+<li><p>方式二：在前面插入数据</p>
+<ul>
+<li>这种做法，在没有key的情况下，所有的li都需要进行修改； </li>
 </ul>
 </li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/26132400-9927ff07c4592538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>当子元素(这里的li)拥有 key 时，React 使用 key 来匹配原有树上的子元素以及最新树上的子元素： </p>
+<p>在下面这种场景下，key为111和222的元素仅仅进行位移，不需要进行任何的修改； </p>
+<p>将key为333的元素插入到最前面的位置即可；</p>
+<ul>
+<li><em>key的注意事项</em>： </li>
+</ul>
+<p>key应该是唯一的；</p>
+<p>key不要使用随机数（随机数在下一次render时，会重新生成一个数字）； </p>
+<p>使用index作为key，对性能是没有优化的；</p>
+</a><h2 id="2-vue中diff算法与react中diff算法区别"><a></a><a href="#2-vue中diff算法与react中diff算法区别" class="headerlink" title="2. vue中diff算法与react中diff算法区别"></a>2. vue中diff算法与react中diff算法区别</h2><ol>
+<li>vue中diff算法在对新老虚拟daom进行对比时，是从节点的两侧向中间对比，而react是从节点左侧开始对比，就好比将新老虚拟dom放入两个栈中，一对多依次对比；</li>
+<li>vue中在进行节点比较时节点的key值与元素类型相同，属性值不同，就会认为是不同节点，就会删除重建，而react中节点的key值与元素类型相同，属性值不同，react会认为是同类型节点，只是修改节点属性</li>
 </ol>
-<hr>
-<ol start="5">
-<li>element的select组件在ie11上打开还有关闭会闪现滚动条，通过在该vue文件最外层div定义样式超出省略overflow-x: hidden;overflow-y:visible!important;解决问题。</li>
-</ol>
-<script>
+<ul>
+<li><p>两者的共同点：</p>
+<p>都只进行同级比较，忽略了跨级操作；常见的现象就是对数组或者对象中的深层元素进行修改时，视图层监测不到其变化，故不会对dom进行更新，需调用一些特质方法来告诉视图层需要更新dom</p>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -542,7 +603,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/">https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/</a>
+                    <a href="https://yZaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/">https://yZaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,7 +640,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -749,24 +814,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/">
+                <a href="/2021/05/10/jsx-de-shi-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="webpack配置代理的注意点">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="jsx的实质">
                         
-                        <span class="card-title">webpack配置代理的注意点</span>
+                        <span class="card-title">jsx的实质</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webpack代理服务的注意点 使用webpack配置代理访问解决跨域问题时，检索地址名如果与路由活跃 地址有相同时，会导致该路由页面刷新不存在，并且无法直接用该路由地址 访问页面，通过修改wenbpack配置内部的检索地址名或者改变路
+                            jsx的实质1. jsx的作用​    实际上，jsx 仅仅只是 React.createElement(component, props, …children) 函数的语法糖。 
+​    所有的jsx最终都会被转换成React.crea
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                         </span>
                         <span class="publish-author">
                             
@@ -779,8 +845,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                 </div>
@@ -794,31 +860,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端日常知识点">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">前端日常知识点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
-
-
-
-
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
+                            前端日常知识点1. CSS3的到来引入了一个非常有用的功能，就是calc()函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备(电脑，平板，手
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
                             </span>
                         <span class="publish-author">
                             
@@ -831,8 +890,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>

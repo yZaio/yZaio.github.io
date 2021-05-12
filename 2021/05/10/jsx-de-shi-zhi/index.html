@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="element踩坑注意, yZaio">
+    <meta name="keywords" content="jsx的实质, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>element踩坑注意 | yZaio</title>
+    <title>jsx的实质 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">element踩坑注意</h1>
+                    <h1 class="description center-align post-title">jsx的实质</h1>
                 </div>
             </div>
         </div>
@@ -433,9 +433,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-05-10
                 </div>
                 
 
@@ -456,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    438
+                    549
                 </div>
                 
 
@@ -468,37 +472,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="element踩坑点"><a href="#element踩坑点" class="headerlink" title="element踩坑点"></a>element踩坑点</h1><ol>
-<li>使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。</li>
-</ol>
-<hr>
-<ol start="2">
-<li>使用element组件校验规则要校验多选框的时候，不能在created周期内定义空数组，反正会出现校验bug，需要先给另外一个变量定义数组后赋值到该项上就可以</li>
-</ol>
-<hr>
-<ol start="3">
-<li>Element组件库的cascader组件在ie11下，如果数据项字段太长会出现显示不全的状况，通过加入以下代码改变下拉框的宽度来解决问题<br><code>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .el-cascader__dropdown .el-cascader-menu { width: 320px !important; } }</code></li>
-</ol>
+                <h1 id="jsx的实质"><a href="#jsx的实质" class="headerlink" title="jsx的实质"></a>jsx的实质</h1><h2 id="1-jsx的作用"><a href="#1-jsx的作用" class="headerlink" title="1. jsx的作用"></a>1. jsx的作用</h2><p>​    实际上，jsx 仅仅只是 React.createElement(component, props, …children) 函数的语法糖。 </p>
+<p>​    所有的jsx最终都会被转换成React.createElement的函数调用</p>
+<p>​    JSX是一种JavaScript的语法扩展（eXtension），也在很多地方称之为JavaScript XML，因为看起就是一段XML语法；</p>
+<p>​    它用于描述我们的UI界面，并且其完成可以和JavaScript融合在一起使用；</p>
+<p>​    它不同于Vue中的模块语法，你不需要专门学习模块语法中的一些指令（比如v-for、v-if、v-else、v-bind）；</p>
+<p>​    所以总体而言，jsx就是为了方便我们在js里面以原先html的写法去完成ui界面的书写，后期babel会自动帮我们进行转化</p>
+<h2 id="2-React-createElement"><a href="#2-React-createElement" class="headerlink" title="2. React.createElement"></a>2. React.createElement</h2><p>​    <strong>createElement需要传递三个参数：</strong></p>
 <ul>
-<li>其中320px为可改变值  根据自身项目数据的长度去进行调整</li>
-</ul>
-<hr>
-<ol start="4">
-<li><p>项目使用elementui组件库的时候，因为设计可能采用的主题色不同，需要修改大部分element组件的默认色的话，可以使用scss来进行全局统一修改，通过安装主题修改器来生成并修改scss文件，修改element默认主题色，代码如下(<a href="https://element.eleme.cn/#/zh-CN/component/custom-theme" target="_blank" rel="noopener">更具体可参考element官网更换主题步骤</a>)：</p>
-<ul>
-<li>cd element-demo</li>
-<li>npm i element-theme -g</li>
-<li>npm i element-theme-chalk -D</li>
-<li>et -i</li>
-<li>修改scss中的颜色值</li>
-<li>et   </li>
-</ul>
+<li><p>参数一：type</p>
+<p>当前ReactElement的类型； </p>
+<p>如果是标签元素，那么就使用字符串表示 “div”； </p>
+<p>如果是组件元素，那么就直接使用组件的名称；</p>
 </li>
-</ol>
+<li><p>参数二：config</p>
+<p>所有jsx中的属性都在config中以对象的属性和值的形式存储</p>
+</li>
+<li><p>参数三：children</p>
+<p>存放在标签中的内容，以children数组的方式进行存储；</p>
 <hr>
-<ol start="5">
-<li>element的select组件在ie11上打开还有关闭会闪现滚动条，通过在该vue文件最外层div定义样式超出省略overflow-x: hidden;overflow-y:visible!important;解决问题。</li>
-</ol>
+
+<p><strong>如以下代码的jsx通过createElement函数书写的格式：</strong></p>
+<ul>
+<li>这是jsx的写法</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/26132400-70c4bac33cacdefb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<ul>
+<li><p>这是使用react.createElement函数的写法</p>
+<p><img src="C:%5CUsers%5Csushengren%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210510140403892.png" alt="image-20210510140403892"></p>
+</li>
+</ul>
+<p>实际上jsx只是语法糖最终打包的时候使用babel会将我们写的jsx代码转化为这种react.createElement的代码给浏览器解析，否则浏览器是无法解析这种jsx代码的</p>
+</li>
+</ul>
+<h2 id="3-ReactElement对象"><a href="#3-ReactElement对象" class="headerlink" title="3.  ReactElement对象"></a>3.  ReactElement对象</h2><p>  那通过react.createElement函数执行后的结果是什么呢？它就是一个ReactElement对象了。也就是我们说的虚拟dom树</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-984ac9b9fa4c5547.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>  我们在这里打印一下react.createElement的最终返回结果，得到以下</p>
+<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-efcd4f843552d8dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>  可以看到我们最终得到一个对象，它就是ReactElement对象，就是虚拟dom树了，最终再通过react.render方法才将这个虚拟dom转为真实dom</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -542,7 +553,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/">https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/</a>
+                    <a href="https://yZaio.github.io/2021/05/10/jsx-de-shi-zhi/">https://yZaio.github.io/2021/05/10/jsx-de-shi-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,7 +590,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -749,24 +764,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/">
+                <a href="/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="webpack配置代理的注意点">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="逻辑与、逻辑或、空值合并运算符">
                         
-                        <span class="card-title">webpack配置代理的注意点</span>
+                        <span class="card-title">逻辑与、逻辑或、空值合并运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webpack代理服务的注意点 使用webpack配置代理访问解决跨域问题时，检索地址名如果与路由活跃 地址有相同时，会导致该路由页面刷新不存在，并且无法直接用该路由地址 访问页面，通过修改wenbpack配置内部的检索地址名或者改变路
+                            逻辑与、逻辑或、空值合并运算符1. 逻辑与
+let  a  =  sign &amp;&amp;  ‘执行了’
+如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                         </span>
                         <span class="publish-author">
                             
@@ -779,8 +796,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>
@@ -794,31 +811,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="react中diff算法和列表key值的作用及与vue中diff算法的区别">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">react中diff算法和列表key值的作用及与vue中diff算法的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
-
-
-
-
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
+                            react中diff算法和列表key值的作用及与vue中diff算法的区别1.react中diff算法及列表key属性的作用React在props或state发生改变时，会调用React的render方法，会创建一颗不同的树。
+React需
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                             </span>
                         <span class="publish-author">
                             
@@ -831,8 +842,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                 </div>

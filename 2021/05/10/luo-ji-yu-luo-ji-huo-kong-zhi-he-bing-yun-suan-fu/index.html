@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="element踩坑注意, yZaio">
+    <meta name="keywords" content="逻辑与、逻辑或、空值合并运算符, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>element踩坑注意 | yZaio</title>
+    <title>逻辑与、逻辑或、空值合并运算符 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">element踩坑注意</h1>
+                    <h1 class="description center-align post-title">逻辑与、逻辑或、空值合并运算符</h1>
                 </div>
             </div>
         </div>
@@ -433,9 +433,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-31
+                    2021-05-10
                 </div>
                 
 
@@ -456,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    438
+                    361
                 </div>
                 
 
@@ -468,37 +472,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="element踩坑点"><a href="#element踩坑点" class="headerlink" title="element踩坑点"></a>element踩坑点</h1><ol>
-<li>使用element输出框并且增加标签属性required的时候，出现输入框输入字符后再删到无字符情况下会校验出现英文状态，需要去掉此属性来解决问题。</li>
-</ol>
-<hr>
-<ol start="2">
-<li>使用element组件校验规则要校验多选框的时候，不能在created周期内定义空数组，反正会出现校验bug，需要先给另外一个变量定义数组后赋值到该项上就可以</li>
-</ol>
-<hr>
-<ol start="3">
-<li>Element组件库的cascader组件在ie11下，如果数据项字段太长会出现显示不全的状况，通过加入以下代码改变下拉框的宽度来解决问题<br><code>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .el-cascader__dropdown .el-cascader-menu { width: 320px !important; } }</code></li>
-</ol>
-<ul>
-<li>其中320px为可改变值  根据自身项目数据的长度去进行调整</li>
-</ul>
-<hr>
-<ol start="4">
-<li><p>项目使用elementui组件库的时候，因为设计可能采用的主题色不同，需要修改大部分element组件的默认色的话，可以使用scss来进行全局统一修改，通过安装主题修改器来生成并修改scss文件，修改element默认主题色，代码如下(<a href="https://element.eleme.cn/#/zh-CN/component/custom-theme" target="_blank" rel="noopener">更具体可参考element官网更换主题步骤</a>)：</p>
-<ul>
-<li>cd element-demo</li>
-<li>npm i element-theme -g</li>
-<li>npm i element-theme-chalk -D</li>
-<li>et -i</li>
-<li>修改scss中的颜色值</li>
-<li>et   </li>
-</ul>
+                <h1 id="逻辑与、逻辑或、空值合并运算符"><a href="#逻辑与、逻辑或、空值合并运算符" class="headerlink" title="逻辑与、逻辑或、空值合并运算符"></a>逻辑与、逻辑或、空值合并运算符</h1><h2 id="1-逻辑与"><a href="#1-逻辑与" class="headerlink" title="1. 逻辑与"></a>1. 逻辑与</h2><ul>
+<li><p>let  a  =  sign &amp;&amp;  ‘执行了’</p>
+<p>如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作为整个表达式的返回值给a，即sign为Nan,则a为Nan，sign为false，a为false</p>
 </li>
-</ol>
-<hr>
-<ol start="5">
-<li>element的select组件在ie11上打开还有关闭会闪现滚动条，通过在该vue文件最外层div定义样式超出省略overflow-x: hidden;overflow-y:visible!important;解决问题。</li>
-</ol>
+</ul>
+<h2 id="2-逻辑或（一般用来做默认值）"><a href="#2-逻辑或（一般用来做默认值）" class="headerlink" title="2. 逻辑或（一般用来做默认值）"></a>2. 逻辑或（一般用来做默认值）</h2><ul>
+<li><p>let a  =  sign ||  ‘执行了’</p>
+<p>如果sign的Boolean值为true时，会把sign的值作为表达式的值返回给a，即sign为‘111’，则a为‘111’，</p>
+<p>如果sign为false  则a为‘执行了’</p>
+</li>
+</ul>
+<h2 id="3-空值合并运算符"><a href="#3-空值合并运算符" class="headerlink" title="3. 空值合并运算符"></a>3. 空值合并运算符</h2><ul>
+<li><p><strong>空值合并操作符</strong>（<strong><code>??</code></strong>）是一个逻辑操作符，当左侧的操作数为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank" rel="noopener"><code>null</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a> 时，返回其右侧操作数，否则返回左侧操作数。</p>
+<p>与<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#logical_or_2" target="_blank" rel="noopener">逻辑或操作符（<code>||</code>）</a>不同，逻辑或操作符会在左侧操作数为<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank" rel="noopener">假值</a>时返回右侧操作数。也就是说，如果使用 <code>||</code> 来为某些变量设置默认值，可能会遇到意料之外的行为。比如为假值（例如，<code>''</code> 或 <code>0</code>）时。见下面的例子。</p>
+<p>const foo = null ?? ‘default string’;<br>console.log(foo);<br>// expected output: “default string”</p>
+<p>const baz = 0 ?? 42;<br>console.log(baz);<br>// expected output: 0  (输出为0，如果为逻辑或运算符，则为42)</p>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -542,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/">https://yZaio.github.io/2021/03/31/element-cai-keng-zhu-yi/</a>
+                    <a href="https://yZaio.github.io/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/">https://yZaio.github.io/2021/05/10/luo-ji-yu-luo-ji-huo-kong-zhi-he-bing-yun-suan-fu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,7 +570,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -749,24 +744,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/31/webpack-pei-zhi-dai-li-de-zhu-yi-dian/">
+                <a href="/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="webpack配置代理的注意点">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
                         
-                        <span class="card-title">webpack配置代理的注意点</span>
+                        <span class="card-title">vue中实现骨架屏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webpack代理服务的注意点 使用webpack配置代理访问解决跨域问题时，检索地址名如果与路由活跃 地址有相同时，会导致该路由页面刷新不存在，并且无法直接用该路由地址 访问页面，通过修改wenbpack配置内部的检索地址名或者改变路
+                            vue中实现vue中实现骨架屏1. 什么是骨架屏​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验
+2.  为什么需要骨架屏​    去饭店吃饭，需要排队了
+​    1. 白屏：
+​ 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
                         </span>
                         <span class="publish-author">
                             
@@ -779,8 +777,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -794,31 +792,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2021/05/10/jsx-de-shi-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="jsx的实质">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">jsx的实质</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
-
-
-
-
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
+                            jsx的实质1. jsx的作用​    实际上，jsx 仅仅只是 React.createElement(component, props, …children) 函数的语法糖。 
+​    所有的jsx最终都会被转换成React.crea
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                             </span>
                         <span class="publish-author">
                             
@@ -831,8 +823,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                 </div>

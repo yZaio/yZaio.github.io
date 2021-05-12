@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web/">
-                                <span class="chip bg-color">web</span>
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    235
+                    340
                 </div>
                 
 
@@ -473,10 +473,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="前端日常知识点"><a href="#前端日常知识点" class="headerlink" title="前端日常知识点"></a>前端日常知识点</h1><h2 id="1-CSS3的到来引入了一个非常有用的功能，就是calc-函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备-电脑，平板，手机-，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局"><a href="#1-CSS3的到来引入了一个非常有用的功能，就是calc-函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备-电脑，平板，手机-，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局" class="headerlink" title="1. CSS3的到来引入了一个非常有用的功能，就是calc()函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备(电脑，平板，手机)，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局"></a>1. CSS3的到来引入了一个非常有用的功能，就是<code>calc()</code>函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在<a href="https://www.webhek.com/misc/responsive-web-design" target="_blank" rel="noopener">自适应网页布局设计</a>中格外有用——针对不同尺寸的设备(电脑，平板，手机)，你需要动态的调整元素的大小，产生适合屏幕大小的不同布局</h2><p>如以下写法</p>
-<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height： calc(<span class="number">50</span>% - <span class="number">20</span>px)</span><br><span class="line">则高度为父盒子高度再减去<span class="number">20</span>px</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">height： calc(50% - 20px)</span><br><span class="line">则高度为父盒子高度再减去20px</span><br></pre></td></tr></tbody></table></figure>
 
 <p>这个计算器有个注意点 ：  就是calc()内部算法中间运算符需使用空格分隔否则不会生效</p>
-<script>
+<h2 id="2-标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp-2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行"><a href="#2-标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp-2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行" class="headerlink" title="2. 标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp:2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行"></a>2. 标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp:2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -557,8 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web/">
-                                    <span class="chip bg-color">web</span>
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
                                 </a>
                             
                         </div>
@@ -726,30 +726,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/">
+                <a href="/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端日常知识点">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="react中diff算法和列表key值的作用及与vue中diff算法的区别">
                         
-                        <span class="card-title">前端日常知识点</span>
+                        <span class="card-title">react中diff算法和列表key值的作用及与vue中diff算法的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端日常知识点1. CSS3的到来引入了一个非常有用的功能，就是calc()函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备(电脑，平板，手
+                            react中diff算法和列表key值的作用及与vue中diff算法的区别1.react中diff算法及列表key属性的作用React在props或state发生改变时，会调用React的render方法，会创建一颗不同的树。
+React需
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -758,12 +758,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                 </div>
@@ -814,8 +813,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>
