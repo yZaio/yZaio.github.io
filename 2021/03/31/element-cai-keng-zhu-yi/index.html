@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    438
+                    542
                 </div>
                 
 
@@ -498,6 +498,10 @@
 <hr>
 <ol start="5">
 <li>element的select组件在ie11上打开还有关闭会闪现滚动条，通过在该vue文件最外层div定义样式超出省略overflow-x: hidden;overflow-y:visible!important;解决问题。</li>
+</ol>
+<hr>
+<ol start="6">
+<li>标签超过省略展示更多的按钮或者文字如果要放在文字同一行，不能单纯使用-webkit-line-clamp:2的方法，需要操作相应标签dom节点获取标签的自带的原生方法getClientRects（），通过数组长度来判定行数，再切割我们需要行数的字符数，把展示更多的按钮或者文字塞到同一行</li>
 </ol>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -794,31 +798,37 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/">
+                <a href="/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="臭猪头，对不起，好好的">
                         
-                        <span class="card-title">基本数据类型与复杂数据类型</span>
+                        <span class="card-title">臭猪头，对不起，好好的</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 基本数据类型
-基本数据类型有string number boolean nul undefined
-他们赋值的时候是保存在栈里面的
+                            Name
+徐文莉
 
+属性
+猪
 
+picture
+对不起，让你受了这么多伤
 
+     
 
-当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
+-555
+        document.querySelectorAll('.github-emoji')
+          .forEach(
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
                             </span>
                         <span class="publish-author">
                             
@@ -831,8 +841,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/love/">
+                        <span class="chip bg-color">love</span>
                     </a>
                     
                 </div>

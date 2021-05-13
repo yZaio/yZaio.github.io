@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    353
+                    558
                 </div>
                 
 
@@ -479,10 +479,34 @@
 <li>jq和原生js等是直接操作真是Dom进行修改页面，而react是用一个jascript对象的虚拟Dom先来描述ui，再使用ReactDom.render来将虚拟dom转化成真实dom形成页面，这样可以避免了频繁操作真实dom树，提高性能，因为本来document.creatElement这个方法创建出来的Dom就是很复杂的东西，而ReactElemnt对象要比它简单很多。</li>
 </ul>
 <h2 id="3-React中设计原则-state中的数据的不可变性"><a href="#3-React中设计原则-state中的数据的不可变性" class="headerlink" title="3. React中设计原则: state中的数据的不可变性;"></a>3. React中设计原则: state中的数据的不可变性;</h2><ul>
-<li><p>即是在修改state中的数据时，不要去修改到原来内部的数据项</p>
-<p><font color="lightGreen">原因是当我们组件继承自pureComponent或者自己书写的高阶组件来对比组件前后state是否重新渲染render时，组件是否重新进行渲染render，会根据前后更改的state进行比较，如果对原先的state进行修改了，会造成一些风险，所以我们在进行setState修改数据时应该保持state的不可变性</font></p>
+<li>即是在修改state中的数据时，不要去修改到原来内部的数据项</li>
+</ul>
+<h2 id="4-逻辑与、逻辑或、空值合并运算符"><a href="#4-逻辑与、逻辑或、空值合并运算符" class="headerlink" title="4. 逻辑与、逻辑或、空值合并运算符"></a>4. 逻辑与、逻辑或、空值合并运算符</h2><ol>
+<li><p>逻辑与</p>
+<ul>
+<li><p>let  a  =  sign &amp;&amp;  ‘执行了’</p>
+<p>如果sign为true的时候  a为执行了，如果sign为false或者nan等会使整个表达式为false的值时，会把sign作为整个表达式的返回值给a，即sign为Nan,则a为Nan，sign为false，a为false</p>
 </li>
 </ul>
+</li>
+<li><p>逻辑或（一般用来做默认值）</p>
+<ul>
+<li><p>let a  =  sign ||  ‘执行了’</p>
+<p>如果sign的Boolean值为true时，会把sign的值作为表达式的值返回给a，即sign为‘111’，则a为‘111’，</p>
+<p>如果sign为false  则a为‘执行了’</p>
+</li>
+</ul>
+</li>
+<li><p>空值合并运算符</p>
+<ul>
+<li><p><strong>空值合并操作符</strong>（<strong><code>??</code></strong>）是一个逻辑操作符，当左侧的操作数为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank" rel="noopener"><code>null</code></a> 或者 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a> 时，返回其右侧操作数，否则返回左侧操作数。</p>
+<p>与<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#logical_or_2" target="_blank" rel="noopener">逻辑或操作符（<code>||</code>）</a>不同，逻辑或操作符会在左侧操作数为<a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank" rel="noopener">假值</a>时返回右侧操作数。也就是说，如果使用 <code>||</code> 来为某些变量设置默认值，可能会遇到意料之外的行为。比如为假值（例如，<code>''</code> 或 <code>0</code>）时。见下面的例子。</p>
+<p>const foo = null ?? ‘default string’;<br>console.log(foo);<br>// expected output: “default string”</p>
+<p>const baz = 0 ?? 42;<br>console.log(baz);<br>// expected output: 0  (输出为0，如果为逻辑或运算符，则为42)</p>
+</li>
+</ul>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -820,8 +844,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="react中diff算法和列表key值的作用及与vue中diff算法的区别, yZaio">
+    <meta name="keywords" content="vue中实现骨架屏, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>react中diff算法和列表key值的作用及与vue中diff算法的区别 | yZaio</title>
+    <title>vue中实现骨架屏 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">react中diff算法和列表key值的作用及与vue中diff算法的区别</h1>
+                    <h1 class="description center-align post-title">vue中实现骨架屏</h1>
                 </div>
             </div>
         </div>
@@ -433,13 +433,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/react/">
-                                <span class="chip bg-color">react</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -451,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-05-12
                 </div>
                 
 
@@ -460,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    52
                 </div>
                 
 
@@ -472,95 +468,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="react中diff算法和列表key值的作用及与vue中diff算法的区别"><a href="#react中diff算法和列表key值的作用及与vue中diff算法的区别" class="headerlink" title="react中diff算法和列表key值的作用及与vue中diff算法的区别"></a>react中diff算法和列表key值的作用及与vue中diff算法的区别</h1><h2 id="1-react中diff算法及列表key属性的作用"><a href="#1-react中diff算法及列表key属性的作用" class="headerlink" title="1.react中diff算法及列表key属性的作用"></a>1.react中diff算法及列表key属性的作用</h2><p>React在props或state发生改变时，会调用React的render方法，会创建一颗不同的树。</p>
-<p>React需要基于这两颗不同的树之间的差别来判断如何有效的更新UI： </p>
-<p>如果一棵树参考另外一棵树进行完全比较更新，那么即使是最先进的算法，该算法的复杂程度为 O(n 3 )，其中 n 是树中元素</p>
-<p>的数量； </p>
-<p> <a href="https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf；" target="_blank" rel="noopener">https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf；</a> </p>
-<p>如果在 React 中使用了该算法，那么展示 1000 个元素所需要执行的计算量将在十亿的量级范围； </p>
-<p>这个开销太过昂贵了，React的更新性能会变得非常低效； </p>
-<p>于是，React对这个diff算法进行了优化，将其优化成了O(n)，如何优化的呢？</p>
-<p>同层节点之间相互比较，不会垮节点比较； </p>
-<p>不同类型的节点，产生不同的树结构；</p>
-<p>开发中，可以通过key来指定哪些节点在不同的渲染下保持稳定；</p>
-<hr>
-<p><font face="逐浪立楷" color="green" size="3">下面通过三步讲下react的diff算法更新虚拟dom和真实dom机制</font></p>
-<h3 id="情况一：对比不同类型的元素"><a href="#情况一：对比不同类型的元素" class="headerlink" title="情况一：对比不同类型的元素"></a><strong>情况一：对比不同类型的元素</strong></h3><ul>
-<li><p>当节点为不同的元素，React会拆卸原有的树，并且建立起新的树：</p>
-<p> 当一个元素从 <a> 变成 <img>，从 </a></p><article><a> 变成 <comment>，或从 <button> 变成 <div> 都会触发一个完整的重建 <p></p>
-<p>流程；</p>
-<p>当卸载一棵树时，对应的DOM节点也会被销毁，组件实例将执行 componentWillUnmount() 方法； </p>
-<p>当建立一棵新的树时，对应的 DOM 节点会被创建以及插入到 DOM 中，组件实例将执行 componentWillMount() 方法， </p>
-<p>紧接着 componentDidMount() 方法； </p>
-</div></button></comment></a></article></li><a>
-</a></ul><a>
-<p>  比如下面的代码更改： </p>
-<p>  React 会销毁<font color="blue">Top</font> 组件并且重新装载一个新的组件，而不会对<font color="blue">Top</font> 进行复用；</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-f0f034844376d533.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="'节点类型不同'"></p>
-<hr>
-<p><strong>情况二：对比同一类型的元素</strong></p>
-<ul>
-<li>当比对两个相同类型的 React 元素时，React 会保留 DOM 节点，仅比对及更新有改变的属性。</li>
-</ul>
-<p>  比如下面的代码更改： </p>
-<p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 className 属性；</p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-c837f28831d16df9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
-<p>  比如下面的代码更改： </p>
-<p>  当更新 style 属性时，React 仅更新有所更变的属性。</p>
-<p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 color 样式，无需修改 fontWeight。 </p>
-<p>  <img src="https://upload-images.jianshu.io/upload_images/26132400-97d8b62302aa2420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
-<p>  如果是同类型的组件元素： </p>
-<p>  组件会保持不变，React会更新该组件的props，并且调用componentWillReceiveProps() 和 componentWillUpdate() 方 </p>
-<p>  法； </p>
-<p>  下一步，调用 render() 方法，diff 算法将在之前的结果以及新的结果中进行递归；</p>
-<hr>
-<p><strong>情况三：对子节点进行递归</strong></p>
-<p>在默认条件下，当递归 DOM 节点的子元素时，React 会同</p>
-<p>时遍历两个子元素的列表；当产生差异时，生成一个</p>
-<p>mutation。 </p>
-<p>我们来看一下在最后插入一条数据的情况： </p>
-<p><img src="https://upload-images.jianshu.io/upload_images/26132400-98c9dfdac4e29322.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
-<p>前面两个比较是完全相同的，所以不会产生mutation； </p>
-<p>最后一个比较，产生一个mutation，将其插入到新的</p>
-<p>DOM树中即可；</p>
-<p>但是如果我们是在中间插入一条数据：</p>
-<p><img src="C:%5CUsers%5Csushengren%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210510111212036.png" alt="image-20210510111212036"></p>
-<p>这样react中新树的第一项与旧树的第一项进行比较，不对应，产生一个mutation，以此类推，</p>
-<p>React会对每一个子元素产生一个mutation，则是三个mutation而不是保持 </p><li>first</li>和<li>second</li>的不变；<p></p>
-<p>这种低效的比较方式会带来一定的性能问题；</p>
-<p><font color="pink">所以为了解决这种低效的性能问题，可以加入keys的优化</font></p>
-<p>我们在react中遍历列表时，在字元素不加key属性的话总是会提示一个警告，让我们加入一个key属性：</p>
-<ul>
-<li>方式一：在最后位置插入数据</li>
-</ul>
-<p>这种情况，有无key意义并不大</p>
-<ul>
-<li><p>方式二：在前面插入数据</p>
-<ul>
-<li>这种做法，在没有key的情况下，所有的li都需要进行修改； </li>
-</ul>
-</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/26132400-9927ff07c4592538.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
-<p>当子元素(这里的li)拥有 key 时，React 使用 key 来匹配原有树上的子元素以及最新树上的子元素： </p>
-<p>在下面这种场景下，key为111和222的元素仅仅进行位移，不需要进行任何的修改； </p>
-<p>将key为333的元素插入到最前面的位置即可；</p>
-<ul>
-<li><em>key的注意事项</em>： </li>
-</ul>
-<p>key应该是唯一的；</p>
-<p>key不要使用随机数（随机数在下一次render时，会重新生成一个数字）； </p>
-<p>使用index作为key，对性能是没有优化的；</p>
-</a><h2 id="2-vue中diff算法与react中diff算法区别"><a></a><a href="#2-vue中diff算法与react中diff算法区别" class="headerlink" title="2. vue中diff算法与react中diff算法区别"></a>2. vue中diff算法与react中diff算法区别</h2><ol>
-<li>vue中diff算法在对新老虚拟daom进行对比时，是从节点的两侧向中间对比，而react是从节点左侧开始对比，就好比将新老虚拟dom放入两个栈中，一对多依次对比；</li>
-<li>vue中在进行节点比较时节点的key值与元素类型相同，属性值不同，就会认为是不同节点，就会删除重建，而react中节点的key值与元素类型相同，属性值不同，react会认为是同类型节点，只是修改节点属性</li>
-</ol>
-<ul>
-<li><p>两者的共同点：</p>
-<p>都只进行同级比较，忽略了跨级操作；常见的现象就是对数组或者对象中的深层元素进行修改时，视图层监测不到其变化，故不会对dom进行更新，需调用一些特质方法来告诉视图层需要更新dom</p>
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -603,7 +511,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/">https://yZaio.github.io/2021/05/10/react-zhong-diff-suan-fa-he-lie-biao-key-zhi-de-zuo-yong-ji-yu-vue-zhong-diff-suan-fa-de-qu-bie/</a>
+                    <a href="https://yZaio.github.io/2021/05/12/vue-zhong-shi-xian-gu-jia-ping-1/">https://yZaio.github.io/2021/05/12/vue-zhong-shi-xian-gu-jia-ping-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -640,11 +548,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/react/">
-                                    <span class="chip bg-color">react</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -810,30 +714,33 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/05/10/jsx-de-shi-zhi/">
+                <a href="/2021/05/12/vue-zhong-shi-xian-gu-jia-ping-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="jsx的实质">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
                         
-                        <span class="card-title">jsx的实质</span>
+                        <span class="card-title">vue中实现骨架屏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. jsx的作用​    实际上，jsx 仅仅只是 React.createElement(component, props, …children) 函数的语法糖。 
-​    所有的jsx最终都会被转换成React.createElem
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -842,14 +749,7 @@
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -860,24 +760,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/13/qian-duan-ri-chang-zhi-shi-dian/">
+                <a href="/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端日常知识点">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
                         
-                        <span class="card-title">前端日常知识点</span>
+                        <span class="card-title">vue中实现骨架屏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端日常知识点1. CSS3的到来引入了一个非常有用的功能，就是calc()函数。有了它，在指定元素高度或宽度时，你可以基于计算进行设定，而不是简单的使用固定数值。这种功能在自适应网页布局设计中格外有用——针对不同尺寸的设备(电脑，平板，手
+                            1. 什么是骨架屏​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验
+2.  为什么需要骨架屏​    去饭店吃饭，需要排队了
+​    1. 白屏：
+​    饭店就只撂下一句话，我们
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
                             </span>
                         <span class="publish-author">
                             
@@ -890,8 +793,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web/">
-                        <span class="chip bg-color">Web</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
