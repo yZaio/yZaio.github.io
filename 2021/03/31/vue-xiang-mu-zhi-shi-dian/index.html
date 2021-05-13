@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    592
+                    574
                 </div>
                 
 
@@ -472,28 +472,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue项目知识点"><a href="#vue项目知识点" class="headerlink" title="vue项目知识点"></a>vue项目知识点</h1><h2 id="1-页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题"><a href="#1-页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题" class="headerlink" title="1. 页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题"></a>1. 页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题</h2><pre><code>window.addEventListener('hashchange', () =&gt; {
-
-let currentPath = window.location.hash.slice(1)
-
-if (this.$route.path !== currentPath) {
-
-this.$router.push(currentPath)
-
-}
-
-}, false)</code></pre><hr>
-<h2 id="2-可以在index-html页面加上以下代码禁止页面缩放"><a href="#2-可以在index-html页面加上以下代码禁止页面缩放" class="headerlink" title="2. 可以在index.html页面加上以下代码禁止页面缩放"></a>2. 可以在index.html页面加上以下代码禁止页面缩放</h2><p> <code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</code></p>
+                <h1 id="vue项目知识点"><a href="#vue项目知识点" class="headerlink" title="vue项目知识点"></a>vue项目知识点</h1><h2 id="1-页面前进后退不刷新问题"><a href="#1-页面前进后退不刷新问题" class="headerlink" title="1.  页面前进后退不刷新问题"></a>1.  页面前进后退不刷新问题</h2><ul>
+<li><p>页面使用hash模式时页面使用网页的前进后退会出现地址栏地址变化但是不刷新的情况，在全局添加Bom事件操作如下来解决问题</p>
+<p>  window.addEventListener(‘hashchange’, () =&gt; {</p>
+<p>  let currentPath = window.location.hash.slice(1)</p>
+<p>  if (this.$route.path !== currentPath) {</p>
+<p>  this.$router.push(currentPath)</p>
+<p>  }</p>
+<p>  }, false)</p>
+</li>
+</ul>
 <hr>
-<h2 id="3-watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object-defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法："><a href="#3-watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object-defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法：" class="headerlink" title="3. watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object.defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法："></a>3. watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object.defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法：</h2><pre><code>let tempArr = [...this.targetArr]
-
-tempArr[0] = {data: 'test'}
-
-this.targetArr = tempArr</code></pre><hr>
-<h2 id="4-批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去"><a href="#4-批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去" class="headerlink" title="4. 批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去"></a>4. 批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去</h2><p><code>'Content-Type': 'multipart/form-data; boundary = ' + new Date().getTime()</code> </p>
+<h2 id="2-禁止缩放方法"><a href="#2-禁止缩放方法" class="headerlink" title="2. 禁止缩放方法"></a>2. 禁止缩放方法</h2><ul>
+<li><p>可以在index.html页面加上以下代码禁止页面缩放</p>
+<p><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</code></p>
+</li>
+</ul>
 <hr>
-<h2 id="5-移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main-js中引入，并使用它其中的attach方法fastclick-attach-document-body-来解决延迟。"><a href="#5-移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main-js中引入，并使用它其中的attach方法fastclick-attach-document-body-来解决延迟。" class="headerlink" title="5. 移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main.js中引入，并使用它其中的attach方法fastclick.attach(document.body)来解决延迟。"></a>5. 移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main.js中引入，并使用它其中的attach方法fastclick.attach(document.body)来解决延迟。</h2><hr>
-<h2 id="6-Vue父子组件通过-sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this-emit-“update-value”-来修改父组件的值"><a href="#6-Vue父子组件通过-sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this-emit-“update-value”-来修改父组件的值" class="headerlink" title="6. Vue父子组件通过.sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this.$emit(“update:value”)来修改父组件的值"></a>6. Vue父子组件通过.sync直接双向传递数据的话，在子组件不能直接更改prop绑定的值，这样的话虽然功能可以实现，但是控制台会报错，需要重新在data里面定义一个变量来接收这个prop的变量，然后修改的时候通过this.$emit(“update:value”)来修改父组件的值</h2><script>
+<h2 id="3-watch监听数组不更新问题"><a href="#3-watch监听数组不更新问题" class="headerlink" title="3. watch监听数组不更新问题"></a>3. watch监听数组不更新问题</h2><ul>
+<li><p>watch对于数组或者对象在某些特定情况下是无法监听到的。这种情况其实和双向绑定的原理有关。Vue双向绑定原理是利用js中的Object.defineproperty重定义对象的GET和SET方法，而同时这种方法存在着缺陷，就是只能监听到对象内已有的值，如果需要改变数组中某个值被监听到的话，直接通过数组的index然后去改变的话无法在watch里面监听到，可以通过临时变量中转的方法：</p>
+<p>  let tempArr = […this.targetArr]</p>
+<p>  tempArr[0] = {data: ‘test’}</p>
+<p>  this.targetArr = tempArr</p>
+</li>
+</ul>
+<hr>
+<h2 id="4-上传文件接口参数问题"><a href="#4-上传文件接口参数问题" class="headerlink" title="4. 上传文件接口参数问题"></a>4. 上传文件接口参数问题</h2><ul>
+<li>批量导入的文件上传不能使用平常的数据类型传参，在axios请求中还需要定义header头部的Content-Type来更换此请求为文件上传类型，传参对象需要new一个FormData，把需要传参得数据，通过append方法加进去</li>
+</ul>
+<p><code>'Content-Type': 'multipart/form-data; boundary = ' + new Date().getTime()</code> </p>
+<hr>
+<h2 id="5-移动端解决300ms延迟"><a href="#5-移动端解决300ms延迟" class="headerlink" title="5.移动端解决300ms延迟"></a>5.移动端解决300ms延迟</h2><ul>
+<li><p>移动端为了识别用户单击双击会在用户第一次点击的时候产生300ms延迟，为了解决这个延迟，可以使用第三方包fastclick，通过npm安装后，在项目的main.js中引入，并使用它其中的attach方法fastclick.attach(document.body)来解决延迟。</p>
+<p>使用fastclick包</p>
+<pre><code>1. npm install fastclick --save
+2. 在mian.js中使用</code></pre><p>  import FastClick from ‘fastclick’<br>  //使用包其中的attach方法<br>  FastClick.attach(document.body)</p>
+</li>
+</ul>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -821,6 +838,14 @@ jsx -&gt; createElement函数 -&gt; ReactElement(对象树) -&gt; ReactDOM.    r
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
                 </div>
                 
             </div>

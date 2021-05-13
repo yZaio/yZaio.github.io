@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2021-05-13T03:53:41.192Z</updated>
+  <updated>2021-05-13T07:40:57.590Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue通过.sync实现父子组件传值双向绑定</title>
+    <link href="https://yzaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/"/>
+    <id>https://yzaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/</id>
+    <published>2021-05-13T06:42:51.000Z</published>
+    <updated>2021-05-13T07:40:57.590Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-普通父子组件传值&quot;&gt;&lt;a href=&quot;#1-普通父子组件传值&quot; class=&quot;headerlink&quot; title=&quot;1. 普通父子组件传值&quot;&gt;&lt;/a&gt;1. 普通父子组件传值&lt;/h2&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="vue" scheme="https://yZaio.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>vue中实现骨架屏</title>
@@ -196,7 +221,7 @@
     <link href="https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/"/>
     <id>https://yzaio.github.io/2021/03/31/vue-xiang-mu-zhi-shi-dian/</id>
     <published>2021-03-31T02:30:23.000Z</published>
-    <updated>2021-05-13T01:19:06.137Z</updated>
+    <updated>2021-05-13T06:42:57.710Z</updated>
     
     <summary type="html">
     
@@ -204,7 +229,7 @@
       
         
         
-          &lt;h1 id=&quot;vue项目知识点&quot;&gt;&lt;a href=&quot;#vue项目知识点&quot; class=&quot;headerlink&quot; title=&quot;vue项目知识点&quot;&gt;&lt;/a&gt;vue项目知识点&lt;/h1&gt;&lt;h2
+          &lt;h1 id=&quot;vue项目知识点&quot;&gt;&lt;a href=&quot;#vue项目知识点&quot; class=&quot;headerlink&quot; title=&quot;vue项目知识点&quot;&gt;&lt;/a&gt;vue项目知识点&lt;/h1&gt;&lt;h2 id=&quot;1-页面前进后退不刷新问题&quot;&gt;&lt;a href=&quot;#1-页面前进后退不刷新问题&quot;
         
       
     
@@ -221,7 +246,7 @@
     <link href="https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/"/>
     <id>https://yzaio.github.io/2021/03/31/ie11-cai-keng-dian/</id>
     <published>2021-03-31T02:27:48.000Z</published>
-    <updated>2021-05-13T01:25:44.389Z</updated>
+    <updated>2021-05-13T06:49:41.311Z</updated>
     
     <summary type="html">
     
@@ -236,6 +261,8 @@
     </summary>
     
     
+    
+      <category term="Web" scheme="https://yZaio.github.io/tags/Web/"/>
     
   </entry>
   
@@ -320,7 +347,7 @@
     <link href="https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/"/>
     <id>https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/</id>
     <published>2020-06-12T08:50:34.792Z</published>
-    <updated>2021-05-13T03:35:00.632Z</updated>
+    <updated>2021-05-13T07:26:09.849Z</updated>
     
     <summary type="html">
     
@@ -328,8 +355,8 @@
       
         
         
-          &lt;p&gt;layout: w&lt;br&gt;title: 基本数据类型与复杂数据类型&lt;br&gt;date: 2020-06-12 16:50:34&lt;br&gt;tags: javascript&lt;/p&gt;
-&lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot;
+          &lt;p&gt;title: 基本数据类型与复杂数据类型&lt;br&gt;date: 2020-06-21 20:21:55&lt;br&gt;tags: Web&lt;/p&gt;
+&lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一.
         
       
     
