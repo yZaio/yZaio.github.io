@@ -506,11 +506,13 @@ let newArr = arr.map((item,index,arr) =&gt; {
 </ul>
 </li>
 <li><p>第二个参数为初始值</p>
-<p>  let arr = [1,2,3]<br>  let total = arr.reduce((preValue,item,index,arr) =&gt; {</p>
-<pre><code>return preValue + item</code></pre><p>  },10)<br>  则total最终结果为10 + 1 + 2 + 3 = 16</p>
 </li>
 </ul>
-<script>
+<pre><code>let arr = [1,2,3]
+let total = arr.reduce((preValue,item,index,arr) =&gt; {
+  return preValue + item
+},10)
+则total最终结果为10 + 1 + 2 + 3 = 16</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
