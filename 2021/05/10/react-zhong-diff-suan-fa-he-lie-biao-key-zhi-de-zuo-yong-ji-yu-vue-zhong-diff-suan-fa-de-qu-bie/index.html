@@ -504,11 +504,11 @@
 </ul>
 <p>  比如下面的代码更改： </p>
 <p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 className 属性；</p>
-<p>  <img src="https://yzaio.gitee.io/medias/images/2.png" alt="img"></p>
+<p>  <img src="https://yzaio.gitee.io/medias/images/2.png" alt=""></p>
 <p>  比如下面的代码更改： </p>
 <p>  当更新 style 属性时，React 仅更新有所更变的属性。</p>
 <p>  通过比对这两个元素，React 知道只需要修改 DOM 元素上的 color 样式，无需修改 fontWeight。 </p>
-<p>  <img src="https://yzaio.gitee.io/medias/images/3.png" alt="img"></p>
+<p>  <img src="https://yzaio.gitee.io/medias/images/3.png" alt=""></p>
 <p>  如果是同类型的组件元素： </p>
 <p>  组件会保持不变，React会更新该组件的props，并且调用componentWillReceiveProps() 和 componentWillUpdate() 方 </p>
 <p>  法； </p>
@@ -519,7 +519,7 @@
 <p>时遍历两个子元素的列表；当产生差异时，生成一个</p>
 <p>mutation。 </p>
 <p>我们来看一下在最后插入一条数据的情况： </p>
-<p><img src="https://yzaio.gitee.io/medias/images/5.png" alt="img"></p>
+<p><img src="https://yzaio.gitee.io/medias/images/5.png" alt=""></p>
 <p>前面两个比较是完全相同的，所以不会产生mutation； </p>
 <p>最后一个比较，产生一个mutation，将其插入到新的</p>
 <p>DOM树中即可；</p>
@@ -541,7 +541,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://yzaio.gitee.io/medias/images/6.png" alt="img"></p>
+<p><img src="https://yzaio.gitee.io/medias/images/6.png" alt=""></p>
 <p>当子元素(这里的li)拥有 key 时，React 使用 key 来匹配原有树上的子元素以及最新树上的子元素： </p>
 <p>在下面这种场景下，key为111和222的元素仅仅进行位移，不需要进行任何的修改； </p>
 <p>将key为333的元素插入到最前面的位置即可；</p>
