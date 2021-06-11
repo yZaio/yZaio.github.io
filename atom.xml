@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2021-05-13T08:29:37.658Z</updated>
+  <updated>2021-06-11T05:45:21.091Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基本数据类型、复杂数据类型与类型判别方法</title>
+    <link href="https://yzaio.github.io/2021/06/11/ji-ben-shu-ju-lei-xing-fu-za-shu-ju-lei-xing-yu-lei-xing-pan-bie-fang-fa/"/>
+    <id>https://yzaio.github.io/2021/06/11/ji-ben-shu-ju-lei-xing-fu-za-shu-ju-lei-xing-yu-lei-xing-pan-bie-fang-fa/</id>
+    <published>2021-06-11T05:34:48.693Z</published>
+    <updated>2021-06-11T05:45:21.091Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一. 基本数据类型&quot;&gt;&lt;/a&gt;一. 基本数据类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;基本数据类型有&lt;br&gt;string number boolean nul
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>react通过redux-hunk中间件实现网络请求数据在redux中进行管理</title>
+    <link href="https://yzaio.github.io/2021/06/09/react-tong-guo-redux-hunk-zhong-jian-jian-shi-xian-wang-luo-qing-qiu-shu-ju-zai-redux-zhong-jin-xing-guan-li/"/>
+    <id>https://yzaio.github.io/2021/06/09/react-tong-guo-redux-hunk-zhong-jian-jian-shi-xian-wang-luo-qing-qiu-shu-ju-zai-redux-zhong-jin-xing-guan-li/</id>
+    <published>2021-06-09T02:42:11.000Z</published>
+    <updated>2021-06-11T03:50:10.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-react-hunk作用&quot;&gt;&lt;a href=&quot;#1-react-hunk作用&quot; class=&quot;headerlink&quot; title=&quot;1. react-hunk作用&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>vue通过.sync实现父子组件传值双向绑定</title>
@@ -339,30 +388,6 @@
     
     
       <category term="love" scheme="https://yZaio.github.io/tags/love/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基本数据类型与复杂数据类型</title>
-    <link href="https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/"/>
-    <id>https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/</id>
-    <published>2020-06-12T08:50:34.792Z</published>
-    <updated>2021-05-13T07:26:09.849Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;title: 基本数据类型与复杂数据类型&lt;br&gt;date: 2020-06-21 20:21:55&lt;br&gt;tags: Web&lt;/p&gt;
-&lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一.
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
