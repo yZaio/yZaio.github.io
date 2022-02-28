@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue通过.sync实现父子组件传值双向绑定, yZaio">
+    <meta name="keywords" content="redux中使用immutable处理数据, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue通过.sync实现父子组件传值双向绑定 | yZaio</title>
+    <title>redux中使用immutable处理数据 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue通过.sync实现父子组件传值双向绑定</h1>
+                    <h1 class="description center-align post-title">redux中使用immutable处理数据</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
                             </a>
                         
                     </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-06-21
                 </div>
                 
 
@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    472
+                    915
                 </div>
                 
 
@@ -472,56 +472,74 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-普通父子组件传值"><a href="#1-普通父子组件传值" class="headerlink" title="1. 普通父子组件传值"></a>1. 普通父子组件传值</h2><p>​    正常vue父子组件传值中</p>
+                <h2 id="1-为什么要使用immutableJS"><a href="#1-为什么要使用immutableJS" class="headerlink" title="1. 为什么要使用immutableJS"></a>1. 为什么要使用immutableJS</h2><p>​    我们知道在redux中reducer是一个纯函数，纯函数即：</p>
+<ol>
+<li><p>对于相同的输入，永远得到相同的输出</p>
+</li>
+<li><p>没有任何可观察到的副作用</p>
+<p>那就是不能对传入进来的参数进行改变影响到原先的数据，在redux中的state我们就强调了数据不可变性，但当数据是引用类型的话，往往会造成一些问题，如：</p>
+</li>
+</ol>
+<p>​    let obj = {name: ‘yang’}</p>
+<p>​    let obj2 = obj</p>
 <ul>
-<li>父组件向子组件传值：</li>
+<li>我们明明没有修改obj，只是修改了obj2，但是最终obj也被我们修改掉了；</li>
+<li>原因非常简单，对象是引用类型，它们指向同一块内存空间，两个引用都可以任意修改；</li>
 </ul>
-<p>​    父组件通过在子组件标签上添加想要传送的属性即可，如下图：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/18.jpg" alt="父向子传值"></p>
-<p><font color="pink"><strong>其中在属性前面加上：是使用了v-bind动态绑定即可以传送变量，如果不加上：则会把fatherStr作为一个字符串传送过去子组件</strong></font></p>
-<hr>
+<p>有没有办法解决上面的问题呢？</p>
 <ul>
-<li><p>子组件接收传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/19.jpg" alt="子接收传值"></p>
-<p><font color="pink"><strong>在子组件中的props中进行接收父亲组件的传值</strong></font></p>
-</li>
+<li>进行对象的拷贝即可：Object.assign或扩展运算符 </li>
 </ul>
-<hr>
+<p>这种对象的浅拷贝有没有问题呢？</p>
 <ul>
-<li><p>子向父亲传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/20.jpg" alt="子向父传值"></p>
-<p><img src="https://yzaio.gitee.io/medias/images/21.jpg" alt="子向父传值"></p>
-<p><font color="pink">子组件通过$emit发射一个函数，并可携带值，父亲组件通过绑定事件接收参数。</font></p>
+<li><p>从代码的角度来说，没有问题，也解决了我们实际开发中一些潜在风险； </p>
+</li>
+<li><p>从性能的角度来说，有问题，如果对象过于庞大，这种拷贝的方式会带来性能问题以及内存浪费； </p>
 </li>
 </ul>
-<h2 id="2-通过-sync实现父子组件数据双向绑定"><a href="#2-通过-sync实现父子组件数据双向绑定" class="headerlink" title="2. 通过.sync实现父子组件数据双向绑定"></a>2. 通过.sync实现父子组件数据双向绑定</h2><ul>
-<li><p>父亲组件向子组件传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/22.jpg" alt="通过.sync进行传值绑定"></p>
-<hr>
+<p><font color="pink">所以为了解决这种性能问题及内存浪费，我们可以引进immutableJS</font></p>
+<h2 id="2-认识immutableJS"><a href="#2-认识immutableJS" class="headerlink" title="2. 认识immutableJS"></a>2. 认识immutableJS</h2><ul>
+<li><p>为了解决上面的问题，出现了Immutable对象的概念： </p>
+<p>Immutable对象的特点是只要修改了对象，就会返回一个新的对象，旧的对象不会发生改变；</p>
+<p>但是这样的方式就不会浪费内存了吗？</p>
 </li>
-</ul>
+<li><p>为了节约内存，又出现了一个新的算法：Persistent DataStructure（持久化数据结构或一致性数据结构）；</p>
+<p>当然，我们一听到持久化第一反应应该是数据被保存到本地或者数据库，但是这里并不是这个含义： </p>
 <ul>
-<li><p>子组件接收值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/23.jpg" alt="子组件接收值并实时更新父组件绑定值"></p>
-<p><font color="pink">子组件在接收到值后这次通过$emit发送事件加上update标识，通知父组件中与当前子组件的childStr参数绑定的变量实时更新，这样就做到了父子组件数据的双向绑定</font></p>
-</li>
-<li><p>最终效果如下：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/24.mkv" alt=""></p>
-<video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/27.png">
-     <source id="mp4" src="https://yzaio.gitee.io/medias/images/24.mkv" type="video/mp4">
-</video>
-
-
-
-
+<li>用一种数据结构来保存数据；</li>
+<li>当数据被修改时，会返回一个对象，但是新的对象会尽可能的利用之前的数据结构而不会对内存造成浪费； </li>
+</ul>
 </li>
 </ul>
-<h2 id="3-解决直接修改props控制台报错"><a href="#3-解决直接修改props控制台报错" class="headerlink" title="3. 解决直接修改props控制台报错"></a>3. 解决直接修改props控制台报错</h2><p>​    第二步能实现了父子组件通信数据双向绑定，但是会在控制台报以下错误</p>
-<p><img src="https://yzaio.gitee.io/medias/images/25.jpg" alt=""></p>
-<p>​    这个错误的导致是因为我们直接修改了props造成的警告，虽然不影响功能，但是还是需要修改一下，遵守规范</p>
-<p>​    <font color="lightGreen">在子组件data中定义多一个变量childStr_copy来接收props的参数，可以把它当成中转值，这样我们就不会直接修改到props中的值了，修改后代码如下：</font></p>
-<p><img src="https://yzaio.gitee.io/medias/images/26.jpg" alt=""></p>
-<p>这样控制台的警告就消失了</p>
+<p>如何做到这一点呢？结构共享</p>
+<p>如下图：</p>
+<p><img src="https://yzaio.gitee.io/medias/images/36.gif" alt=""></p>
+<h2 id="3-immutableJS基本用法"><a href="#3-immutableJS基本用法" class="headerlink" title="3. immutableJS基本用法"></a>3. immutableJS基本用法</h2><p>JavaScript和ImmutableJS直接的转换</p>
+<ul>
+<li><p>对象转换成Immutable对象：Map； </p>
+</li>
+<li><p>数组转换成Immutable数组：List； </p>
+</li>
+<li><p>深层转换：fromJS； </p>
+</li>
+<li><p>Immutable类型转成：toJS()； </p>
+</li>
+</ul>
+<p>ImmutableJS的基本操作： </p>
+<ul>
+<li><p>修改数据：set</p>
+</li>
+<li><p>获取数据：get</p>
+</li>
+</ul>
+<h2 id="4-在redux中使用immutableJS"><a href="#4-在redux中使用immutableJS" class="headerlink" title="4. 在redux中使用immutableJS"></a>4. 在redux中使用immutableJS</h2><p>结合Redux管理数据：</p>
+<ol>
+<li><p>使用redux-immutable中的combineReducers； </p>
+</li>
+<li><p>所有的reducer中的数据都转换成Immutable类型的数据；</p>
+</li>
+</ol>
+<h2 id="5-redux中使用immutableJS的好处"><a href="#5-redux中使用immutableJS的好处" class="headerlink" title="5. redux中使用immutableJS的好处"></a>5. redux中使用immutableJS的好处</h2><p>immutabl在修改复杂数据类型后 他会重新生成一个对象或者数组返回，不会影响到原来的，但是会尽可能使用原先的结构还有节点，保证性能上优化及内存的使用，如果不使用immutable的话，由于我们reducer是一个纯函数，不去影响到原先传进的state，所以每次数据有改变的时候，我们必须先拷贝一份state，再对其中需要修改的数据进行改变，再return出去，这样那些不需要修改的数据也被拷贝了这样大大的影响了性能和内存的占用，所以可以使用到immutable来对改变数据时进行相同节点的利用，只改变修改节点，再return一份新的出去，这样可以保证性能上的优化和内存的使用</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -565,7 +583,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/">https://yZaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/</a>
+                    <a href="https://yZaio.github.io/2021/06/21/redux-zhong-shi-yong-immutable-chu-li-shu-ju/">https://yZaio.github.io/2021/06/21/redux-zhong-shi-yong-immutable-chu-li-shu-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -603,8 +621,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
                                 </a>
                             
                         </div>
@@ -776,27 +794,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/21/jie-liu-he-fang-dou/">
+                <a href="/2021/06/22/test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="节流和防抖">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
                         
-                        <span class="card-title">节流和防抖</span>
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 节流1. 什么是节流很多人都玩过类似于飞机大战的游戏（当然，这里只是举一个例子，为了方便大家理解，虽然大部分前端程序员并不做游戏，但是这个例子可以很好的解释节流函数）
-在飞机大战的游戏中，我们按下空格会发射一个子弹：
-
-很多飞机大战的
+                                 # 震惊！国内某数字消费资讯网站竟提供这种服务     * 🔧 效率工具推荐 &amp; 生产力技巧     * 💰 这些产品值得买     * 🔭 这个技术你会懂     * 👍 什么是最好的？ 
+        doc
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-22
                         </span>
                         <span class="publish-author">
                             
@@ -805,14 +821,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Web/">
-                        <span class="chip bg-color">Web</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -824,27 +832,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">
+                <a href="/2021/06/09/react-tong-guo-redux-hunk-zhong-jian-jian-shi-xian-wang-luo-qing-qiu-shu-ju-zai-redux-zhong-jin-xing-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="react通过redux-hunk中间件实现网络请求数据在redux中进行管理">
                         
-                        <span class="card-title">vue中实现骨架屏</span>
+                        <span class="card-title">react通过redux-hunk中间件实现网络请求数据在redux中进行管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 什么是骨架屏​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验
-2.  为什么需要骨架屏​    去饭店吃饭，需要排队了
-​    1. 白屏：
-​    饭店就只撂下一句话，我们
+                            1. react-hunk作用原本redux的dispatch默认只能传一个对象，redux-thunk的作用就是使我们的dispatch支持传送一个函数，这样我们可以在这个函数中进行网络请求等相关操作了。
+2. redux-thunk使用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-09
                             </span>
                         <span class="publish-author">
                             
@@ -857,8 +863,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                 </div>

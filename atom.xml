@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yzaio.github.io/"/>
-  <updated>2021-06-11T03:50:10.143Z</updated>
+  <updated>2021-06-22T08:49:19.055Z</updated>
   <id>https://yzaio.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://yzaio.github.io/2021/06/22/test/"/>
+    <id>https://yzaio.github.io/2021/06/22/test/</id>
+    <published>2021-06-22T08:48:53.579Z</published>
+    <updated>2021-06-22T08:49:19.055Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;section data-markdown=&quot;&quot;&gt;     # 震惊！国内某数字消费资讯网站竟提供这种服务     * 🔧 效率工具推荐 &amp;amp; 生产力技巧     * 💰 这些产品值得买     * 🔭 这个技术你会懂     * 👍 什么是最好的？
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>redux中使用immutable处理数据</title>
+    <link href="https://yzaio.github.io/2021/06/21/redux-zhong-shi-yong-immutable-chu-li-shu-ju/"/>
+    <id>https://yzaio.github.io/2021/06/21/redux-zhong-shi-yong-immutable-chu-li-shu-ju/</id>
+    <published>2021-06-21T07:15:13.000Z</published>
+    <updated>2021-06-22T09:30:37.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-为什么要使用immutableJS&quot;&gt;&lt;a href=&quot;#1-为什么要使用immutableJS&quot; class=&quot;headerlink&quot; title=&quot;1. 为什么要使用immutableJS&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>react通过redux-hunk中间件实现网络请求数据在redux中进行管理</title>
@@ -38,6 +86,31 @@
     
     
       <category term="react" scheme="https://yZaio.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>节流和防抖</title>
+    <link href="https://yzaio.github.io/2021/05/21/jie-liu-he-fang-dou/"/>
+    <id>https://yzaio.github.io/2021/05/21/jie-liu-he-fang-dou/</id>
+    <published>2021-05-21T01:33:58.000Z</published>
+    <updated>2021-05-21T02:39:34.091Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-节流&quot;&gt;&lt;a href=&quot;#1-节流&quot; class=&quot;headerlink&quot; title=&quot;1. 节流&quot;&gt;&lt;/a&gt;1. 节流&lt;/h2&gt;&lt;h3 id=&quot;1-什么是节流&quot;&gt;&lt;a href=&quot;#1-什么是节流&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Web" scheme="https://yZaio.github.io/tags/Web/"/>
     
   </entry>
   
@@ -368,11 +441,11 @@
   </entry>
   
   <entry>
-    <title>基本数据类型与复杂数据类型</title>
-    <link href="https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/"/>
-    <id>https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing/</id>
+    <title>基本数据类型与复杂数据类型及类型判别</title>
+    <link href="https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing-ji-lei-xing-pan-bie/"/>
+    <id>https://yzaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing-ji-lei-xing-pan-bie/</id>
     <published>2020-06-12T08:50:34.792Z</published>
-    <updated>2021-06-11T03:56:54.140Z</updated>
+    <updated>2021-06-09T08:58:31.482Z</updated>
     
     <summary type="html">
     
@@ -380,8 +453,8 @@
       
         
         
-          &lt;p&gt;title: 基本数据类型与复杂数据类型&lt;br&gt;date: 2020-06-21 20:21:55&lt;br&gt;tags: Web&lt;/p&gt;
-&lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一.
+          &lt;h2 id=&quot;一-基本数据类型&quot;&gt;&lt;a href=&quot;#一-基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;一. 基本数据类型&quot;&gt;&lt;/a&gt;一. 基本数据类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;基本数据类型有&lt;br&gt;string number boolean nul
         
       
     

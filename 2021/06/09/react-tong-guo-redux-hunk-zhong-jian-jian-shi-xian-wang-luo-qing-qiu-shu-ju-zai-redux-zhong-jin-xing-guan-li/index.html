@@ -759,31 +759,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/09/react-tong-guo-redux-hunk-zhong-jian-jian-shi-xian-wang-luo-qing-qiu-shu-ju-zai-redux-zhong-jin-xing-guan-li/">
+                <a href="/2021/06/21/redux-zhong-shi-yong-immutable-chu-li-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="react通过redux-hunk中间件实现网络请求数据在redux中进行管理">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="redux中使用immutable处理数据">
                         
-                        <span class="card-title">react通过redux-hunk中间件实现网络请求数据在redux中进行管理</span>
+                        <span class="card-title">redux中使用immutable处理数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. react-hunk作用原本redux的dispatch默认只能传一个对象，redux-thunk的作用就是使我们的dispatch支持传送一个函数，这样我们可以在这个函数中进行网络请求等相关操作了。
-2. redux-thunk使用
+                            1. 为什么要使用immutableJS​    我们知道在redux中reducer是一个纯函数，纯函数即：
+
+对于相同的输入，永远得到相同的输出
+
+没有任何可观察到的副作用
+那就是不能对传入进来的参数进行改变影响到原先的数据，在redu
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -792,7 +795,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -811,30 +813,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/">
+                <a href="/2021/05/21/jie-liu-he-fang-dou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue通过.sync实现父子组件传值双向绑定">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="节流和防抖">
                         
-                        <span class="card-title">vue通过.sync实现父子组件传值双向绑定</span>
+                        <span class="card-title">节流和防抖</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 普通父子组件传值​    正常vue父子组件传值中
+                            1. 节流1. 什么是节流很多人都玩过类似于飞机大战的游戏（当然，这里只是举一个例子，为了方便大家理解，虽然大部分前端程序员并不做游戏，但是这个例子可以很好的解释节流函数）
+在飞机大战的游戏中，我们按下空格会发射一个子弹：
 
-父组件向子组件传值：
-
-​    父组件通过在子组件标签上添加想要传送的属性即可，如下图：
-
-其中在属性前面加上：是使用了v-bind动态绑定即可以传送变量，如果不加上：则会把fa
+很多飞机大战的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
                             </span>
                         <span class="publish-author">
                             
@@ -847,8 +846,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>

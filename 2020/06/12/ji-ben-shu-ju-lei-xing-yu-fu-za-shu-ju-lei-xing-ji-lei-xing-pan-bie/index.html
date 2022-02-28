@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue通过.sync实现父子组件传值双向绑定, yZaio">
+    <meta name="keywords" content="基本数据类型与复杂数据类型及类型判别, yZaio">
     <meta name="description" content="我只是希望你们都开心点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vue通过.sync实现父子组件传值双向绑定 | yZaio</title>
+    <title>基本数据类型与复杂数据类型及类型判别 | yZaio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue通过.sync实现父子组件传值双向绑定</h1>
+                    <h1 class="description center-align post-title">基本数据类型与复杂数据类型及类型判别</h1>
                 </div>
             </div>
         </div>
@@ -433,13 +433,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -451,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2020-06-12
                 </div>
                 
 
@@ -460,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    472
+                    584
                 </div>
                 
 
@@ -472,56 +468,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-普通父子组件传值"><a href="#1-普通父子组件传值" class="headerlink" title="1. 普通父子组件传值"></a>1. 普通父子组件传值</h2><p>​    正常vue父子组件传值中</p>
+                <h2 id="一-基本数据类型"><a href="#一-基本数据类型" class="headerlink" title="一. 基本数据类型"></a>一. 基本数据类型</h2><ol>
+<li>基本数据类型有<br>string number boolean nul undefined<ul>
+<li>他们赋值的时候是保存在栈里面的</li>
+</ul>
+</li>
+</ol>
 <ul>
-<li>父组件向子组件传值：</li>
+<li><p>当出现相互赋值的以下情况<br>var a = 1<br>var b = a<br><strong>这个时候只是把a的值赋值给b，两者变量存放的地址并不相同，所以两者改变自己的值另外一方不受影响</strong></p>
+<p><img src="https://yzaio.gitee.io/medias/images/15.png" alt="基本数据类型"></p>
+<h2 id="二-复杂数据类型"><a href="#二-复杂数据类型" class="headerlink" title="二. 复杂数据类型"></a>二. 复杂数据类型</h2><ol start="2">
+<li>复杂数据类型<br>object array function<ul>
+<li>他们赋值声明的时候，是保存在堆里面的，而且和基本数据类型不同的是我们给基本数据类型赋值的时候就是直接把值赋过去，但是我们给复杂数据类型赋值的时候是在堆中为它开辟一个内存地址用于存放数据，而我们只是把这个数据的存放的内存地址赋值给这个复杂数据类型</li>
+<li>所以当出现以下情况，以对象为例子<br>var obj = {name: ‘kobe’}<br>var newObj = obj<br>newObj.name = ‘wade’<br>console.log(obj) //{name: ‘wade’}<br>//这个时候我们是把obj的内存地址给到了newObj，所以两个变量都同时指向这个区域，当任何一方发生改变的时候，另外一方也会发生改变<br><img src="https://yzaio.gitee.io/medias/images/16.png" alt="复杂数据类型"></li>
 </ul>
-<p>​    父组件通过在子组件标签上添加想要传送的属性即可，如下图：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/18.jpg" alt="父向子传值"></p>
-<p><font color="pink"><strong>其中在属性前面加上：是使用了v-bind动态绑定即可以传送变量，如果不加上：则会把fatherStr作为一个字符串传送过去子组件</strong></font></p>
-<hr>
-<ul>
-<li><p>子组件接收传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/19.jpg" alt="子接收传值"></p>
-<p><font color="pink"><strong>在子组件中的props中进行接收父亲组件的传值</strong></font></p>
+</li>
+</ol>
 </li>
 </ul>
-<hr>
-<ul>
-<li><p>子向父亲传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/20.jpg" alt="子向父传值"></p>
-<p><img src="https://yzaio.gitee.io/medias/images/21.jpg" alt="子向父传值"></p>
-<p><font color="pink">子组件通过$emit发射一个函数，并可携带值，父亲组件通过绑定事件接收参数。</font></p>
+<h2 id="三-类型判别"><a href="#三-类型判别" class="headerlink" title="三.  类型判别"></a>三.  类型判别</h2><ul>
+<li><p>使用typeof可以判别简单数据类型，对于复杂数据类型无法精准判别，只会输出object</p>
+<p>所以我们可以使用到js中的Object.prototype.toString.call方法，下面是它的作用：</p>
+<p>var  gettype=Object.prototype.toString</p>
+<p>gettype.call(‘aaaa’)输出   [object String]</p>
+<p>gettype.call(2222) 输出   [object Number]</p>
+<p>gettype.call(true) 输出   [object Boolean]</p>
+<p>gettype.call(undefined) 输出   [object Undefined]</p>
+<p>gettype.call(null) 输出  [object Null]</p>
+<p>gettype.call({})  输出  [object Object]</p>
+<p>gettype.call([])  输出  [object Array]</p>
+<p>gettype.call(function(){})   输出  [object Function]</p>
 </li>
+<li><p><font color="pink">所以我们可以封装一个方法来对类型进行判别</font></p>
+</li>
+<li><p>封装isType函数如下：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let isType = type =&gt; obj =&gt; {</span><br><span class="line">  console.log(obj)</span><br><span class="line">  console.log(type)</span><br><span class="line">  return Object.prototype.toString.call( obj ) === '[object ' + type + ']';</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>接下来使用函数看看效果（对于简单数据类型和复杂数据类型都可检测）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(isType('String')(111)); //false</span><br><span class="line">console.log(isType('Function')(function test() {</span><br><span class="line"></span><br><span class="line">})) // true</span><br><span class="line">console.log(isType('Object')([])) // false</span><br><span class="line">console.log(isType('Array')([]))  // true</span><br><span class="line">console.log(isType('Object')({})) // true</span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
-<h2 id="2-通过-sync实现父子组件数据双向绑定"><a href="#2-通过-sync实现父子组件数据双向绑定" class="headerlink" title="2. 通过.sync实现父子组件数据双向绑定"></a>2. 通过.sync实现父子组件数据双向绑定</h2><ul>
-<li><p>父亲组件向子组件传值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/22.jpg" alt="通过.sync进行传值绑定"></p>
-<hr>
-</li>
-</ul>
-<ul>
-<li><p>子组件接收值：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/23.jpg" alt="子组件接收值并实时更新父组件绑定值"></p>
-<p><font color="pink">子组件在接收到值后这次通过$emit发送事件加上update标识，通知父组件中与当前子组件的childStr参数绑定的变量实时更新，这样就做到了父子组件数据的双向绑定</font></p>
-</li>
-<li><p>最终效果如下：</p>
-<p><img src="https://yzaio.gitee.io/medias/images/24.mkv" alt=""></p>
-<video id="video" controls="" preload="none" poster="https://yzaio.gitee.io/medias/images/27.png">
-     <source id="mp4" src="https://yzaio.gitee.io/medias/images/24.mkv" type="video/mp4">
-</video>
-
-
-
-
-</li>
-</ul>
-<h2 id="3-解决直接修改props控制台报错"><a href="#3-解决直接修改props控制台报错" class="headerlink" title="3. 解决直接修改props控制台报错"></a>3. 解决直接修改props控制台报错</h2><p>​    第二步能实现了父子组件通信数据双向绑定，但是会在控制台报以下错误</p>
-<p><img src="https://yzaio.gitee.io/medias/images/25.jpg" alt=""></p>
-<p>​    这个错误的导致是因为我们直接修改了props造成的警告，虽然不影响功能，但是还是需要修改一下，遵守规范</p>
-<p>​    <font color="lightGreen">在子组件data中定义多一个变量childStr_copy来接收props的参数，可以把它当成中转值，这样我们就不会直接修改到props中的值了，修改后代码如下：</font></p>
-<p><img src="https://yzaio.gitee.io/medias/images/26.jpg" alt=""></p>
-<p>这样控制台的警告就消失了</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -565,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yZaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/">https://yZaio.github.io/2021/05/13/vue-tong-guo-sync-shi-xian-fu-zi-zu-jian-chuan-zhi-shuang-xiang-bang-ding/</a>
+                    <a href="https://yZaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing-ji-lei-xing-pan-bie/">https://yZaio.github.io/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing-ji-lei-xing-pan-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,11 +587,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -776,27 +757,37 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/21/jie-liu-he-fang-dou/">
+                <a href="/2020/06/21/chou-zhu-tou-dui-bu-qi-hao-hao-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="节流和防抖">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="臭猪头，对不起，好好的">
                         
-                        <span class="card-title">节流和防抖</span>
+                        <span class="card-title">臭猪头，对不起，好好的</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 节流1. 什么是节流很多人都玩过类似于飞机大战的游戏（当然，这里只是举一个例子，为了方便大家理解，虽然大部分前端程序员并不做游戏，但是这个例子可以很好的解释节流函数）
-在飞机大战的游戏中，我们按下空格会发射一个子弹：
+                            Name
+徐文莉
 
-很多飞机大战的
+属性
+猪
+
+picture
+对不起，让你受了这么多伤
+
+     
+
+-555
+        document.querySelectorAll('.github-emoji')
+          .forEach(
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
                         </span>
                         <span class="publish-author">
                             
@@ -809,8 +800,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web/">
-                        <span class="chip bg-color">Web</span>
+                    <a href="/tags/love/">
+                        <span class="chip bg-color">love</span>
                     </a>
                     
                 </div>
@@ -821,30 +812,34 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/11/vue-zhong-shi-xian-gu-jia-ping/">
+                <a href="/2020/06/12/ji-ben-shu-ju-lei-xing-yu-fu-za-shu-ju-lei-xing-ji-lei-xing-pan-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="vue中实现骨架屏">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="基本数据类型与复杂数据类型及类型判别">
                         
-                        <span class="card-title">vue中实现骨架屏</span>
+                        <span class="card-title">基本数据类型与复杂数据类型及类型判别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 什么是骨架屏​    骨架屏一般用于页面在请求远程数据尚未完成时，页面用灰色块预显示本来的页面结构，给用户更好的体验
-2.  为什么需要骨架屏​    去饭店吃饭，需要排队了
-​    1. 白屏：
-​    饭店就只撂下一句话，我们
+                            一. 基本数据类型
+基本数据类型有string number boolean nul undefined
+他们赋值的时候是保存在栈里面的
+
+
+
+
+当出现相互赋值的以下情况var a = 1var b = a这个时候只是把a的值赋值给b，两者
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-12
                             </span>
                         <span class="publish-author">
                             
@@ -854,14 +849,7 @@
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
